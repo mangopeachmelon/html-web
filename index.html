@@ -1,23 +1,39 @@
-<!DOCTYPEE html>
-<html>
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-    <meta charset="UTF-8"
+    <meta charset="UTF-8">
     <title>팀프로젝트</title>
+
+    <style>
+        body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 40px; text-align: center; /*전체 글과 요소를 가운데 정렬 */}
+
+        h1 {font-size: 32px; margin-bottom: 10px;}
+
+        h2 {font-size: 24px; margin-top: 40px; margin-bottom: 10px;} /* 큰 박스 */
+        .big-box { width: 200px; height: 200px; background: #e3e3e3; display: inline-block; /* 가운데 정렬 유지 */ margin: 20px; line-height: 200px; /* 텍스트 수직 가운데 */ font-size: 18px;}
+
+        /* 작은 박스 */
+        .small-box { width: 150px; height: 150px; background: #f0f0f0; display: inline-block; /* 가운데 정렬 유지 */ margin: 15px; line-height: 150px; /* 텍스트 수직 가운데 */ font-size: 16px;}
+
+    </style>
 </head>
+
 <body>
+
+    <p>팀프로젝트</p>
+
     <h1>블로그 메인</h1>
+
     <h2>메인 페이지</h2>
+    <div class="big-box">이미지 1</div>
+    <div class="big-box">이미지 2</div>
 
-    <div style="width:150px; height:150px; background:#ddd; display:inline-block; margin:10px;"> 이미지 1</div>
-    <div style="width:150px; height:150px; background:#ddd; display:inline-block; margin:10px;">이미지 2</div>
-    
     <h2>모든 글</h2>
+    <div class="small-box">A</div>
+    <div class="small-box">B</div>
+    <div class="small-box">C</div>
+    <div class="small-box">D</div>
+    <div class="small-box">E</div>
 
-    <div style="width:120px; height:120px; background:#eee; display:inline-block; margin:10px;">A</div>
-    <div style="width:120px; height:120px; background:#eee; display:inline-block; margin:10px;">B</div>
-    <div style="width:120px; height:120px; background:#eee; display:inline-block; margin:10px;">C</div>
-    <div style="width:120px; height:120px; background:#eee; display:inline-block; margin:10px;">D</div>
-    <div style="width:120px; height:120px; background:#eee; display:inline-block; margin:10px;">E</div>
-    <div style="width:120px; height:120px; background:#eee; display:inline-block; margin:10px;">E</div>
 </body>
 </html>
