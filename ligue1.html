@@ -14,62 +14,95 @@
     <div class="menu">☰</div>
 </header>
 
-<p><a href="index.html">← 메인으로 돌아가기</a></p>
-
-<h1>Ligue 1 주요 팀</h1>
-
-<div class="card-container">
-
-    <div class="card">
-        <div class="card-image"></div>
-        <div class="card-content">
-            <h3>Paris Saint-Germain</h3>
-            <p>프랑스를 대표하는 최강 팀, 스타 플레이어들이 모여 있는 클럽.</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-image"></div>
-        <div class="card-content">
-            <h3>Olympique Marseille</h3>
-            <p>열정적인 팬을 보유한 프랑스 남부의 구단.</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-image"></div>
-        <div class="card-content">
-            <h3>Olympique Lyonnais</h3>
-            <p>유망주 발굴과 육성으로 유명한 클럽.</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-image"></div>
-        <div class="card-content">
-            <h3>AS Monaco</h3>
-            <p>모나코를 연고로 하는 팀, 공격적인 축구가 특징.</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-image"></div>
-        <div class="card-content">
-            <h3>Lille OSC</h3>
-            <p>리그 앙 우승 경험이 있는 팀.</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-image"></div>
-        <div class="card-content">
-            <h3>OGC Nice</h3>
-            <p>지중해 연안 도시 니스를 연고로 하는 클럽.</p>
-        </div>
-    </div>
-
+<div class="sidebar" id="sidebar">
+    <h3>카테고리</h3>
+    <ul>
+        <li><a href="index.html">홈</a></li>
+        <li><a href="premier-league.html">Premier League</a></li>
+        <li><a href="la-liga.html">La Liga</a></li>
+        <li><a href="serie-a.html">Serie A</a></li>
+        <li><a href="bundesliga.html">Bundesliga</a></li>
+        <li><a href="ligue1.html">Ligue 1</a></li>
+    </ul>
 </div>
+
+<div class="overlay" id="overlay"></div>
+
+<main class="container">
+
+    <p><a href="index.html" class="back-link">← 메인으로 돌아가기</a></p>
+
+    <h1>Ligue 1 주요 팀</h1>
+
+    <div class="card-container">
+
+        <div class="card">
+            <div class="card-image"></div>
+            <div class="card-content">
+                <h3>Paris Saint-Germain</h3>
+                <p>프랑스를 대표하는 최강 팀, 스타 플레이어들이 모여 있는 클럽.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image"></div>
+            <div class="card-content">
+                <h3>Olympique Marseille</h3>
+                <p>열정적인 팬을 보유한 프랑스 남부의 구단.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image"></div>
+            <div class="card-content">
+                <h3>Olympique Lyonnais</h3>
+                <p>유망주 발굴과 육성으로 유명한 클럽.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image"></div>
+            <div class="card-content">
+                <h3>AS Monaco</h3>
+                <p>모나코를 연고로 하는 팀, 공격적인 축구가 특징.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image"></div>
+            <div class="card-content">
+                <h3>Lille OSC</h3>
+                <p>리그 앙 우승 경험이 있는 팀.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image"></div>
+            <div class="card-content">
+                <h3>OGC Nice</h3>
+                <p>지중해 연안 도시 니스를 연고로 하는 클럽.</p>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+<script>
+    const menuBtn = document.querySelector('.menu');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+
+    menuBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+        overlay.classList.toggle('show');
+    });
+
+    overlay.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('show');
+    });
+</script>
 
 </body>
 </html>
-

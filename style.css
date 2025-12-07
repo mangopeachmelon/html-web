@@ -1,9 +1,18 @@
 /* 전체 페이지 공통 설정 */
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    margin: 40px;
+    margin: 0;
     line-height: 1.6;
-    text-align: center; /* 메인 페이지에서 가운데 정렬 */
+    background: #f6f6f6; /* 연한 회색 배경 */
+}
+
+/* 내용 영역 컨테이너: 가운데 정렬 + 폭 제한 */
+.container {
+    max-width: 1000px;   /* 내용 최대 폭 */
+    margin: 80px auto 40px;  /* 위는 헤더 때문에 여백, 아래는 일반 여백 */
+    padding: 0 20px;
+    text-align: center;
+    background: #ffffff; /* 흰색 박스 느낌 */
 }
 
 /* 메인 타이틀 & 섹션 제목 */
@@ -14,15 +23,22 @@ h1 {
 
 h2 {
     font-size: 24px;
-    margin-top: 40px;
+    margin-top: 30px;
     margin-bottom: 10px;
 }
 
-/* 링크 스타일 */
+/* 기본 링크 스타일 */
 a {
     text-decoration: none;
     color: black;
     font-weight: 500;
+}
+
+/* 뒤로가기 링크용 */
+.back-link {
+    margin: 10px 0 20px;
+    display: inline-block;
+    color: #0077cc;
 }
 
 /* ------- 헤더 (상단바) ------- */
@@ -38,8 +54,9 @@ header {
     background: #ffffff;
     border-bottom: 1px solid #ddd;
 
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
     z-index: 10;
 }
 
@@ -120,7 +137,7 @@ header .menu {
     border: 1px solid #ddd;
     border-radius: 10px;
     display: inline-block;
-    margin: 20px;
+    margin: 0;
     overflow: hidden;
     text-align: left;
     box-shadow: 0 3px 8px rgba(0,0,0,0.12);
@@ -163,11 +180,4 @@ header .menu {
     gap: 20px; /* 카드 사이 간격 */
     justify-items: center; /* 카드 가운데 정렬 */
     margin-top: 20px;
-}
-
-/* 메인으로 돌아가기 링크 */
-.back-link {
-    margin: 10px 0 20px;
-    display: inline-block;
-    color: #0077cc;
 }

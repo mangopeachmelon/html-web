@@ -14,61 +14,95 @@
     <div class="menu">☰</div>
 </header>
 
-<p><a href="index.html">← 메인으로 돌아가기</a></p>
-
-<h1>Bundesliga 주요 팀</h1>
-
-<div class="card-container">
-
-    <div class="card">
-        <div class="card-image"></div>
-        <div class="card-content">
-            <h3>Bayern Munich</h3>
-            <p>독일 최강 팀으로, 분데스리가 우승을 다수 차지.</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-image"></div>
-        <div class="card-content">
-            <h3>Borussia Dortmund</h3>
-            <p>열정적인 홈 팬과 공격적인 스타일로 유명.</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-image"></div>
-        <div class="card-content">
-            <h3>RB Leipzig</h3>
-            <p>최근 빠르게 성장하고 있는 신흥 강팀.</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-image"></div>
-        <div class="card-content">
-            <h3>Bayer Leverkusen</h3>
-            <p>공격적인 축구로 많은 골을 기록하는 팀.</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-image"></div>
-        <div class="card-content">
-            <h3>Union Berlin</h3>
-            <p>최근 상위권으로 도약한 베를린의 구단.</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-image"></div>
-        <div class="card-content">
-            <h3>Eintracht Frankfurt</h3>
-            <p>유로파 리그 우승 경험이 있는 팀.</p>
-        </div>
-    </div>
-
+<div class="sidebar" id="sidebar">
+    <h3>카테고리</h3>
+    <ul>
+        <li><a href="index.html">홈</a></li>
+        <li><a href="premier-league.html">Premier League</a></li>
+        <li><a href="la-liga.html">La Liga</a></li>
+        <li><a href="serie-a.html">Serie A</a></li>
+        <li><a href="Bundesliga.html">Bundesliga</a></li>
+        <li><a href="ligue1.html">Ligue 1</a></li>
+    </ul>
 </div>
+
+<div class="overlay" id="overlay"></div>
+
+<main class="container">
+
+    <p><a href="index.html" class="back-link">← 메인으로 돌아가기</a></p>
+
+    <h1>Bundesliga 주요 팀</h1>
+
+    <div class="card-container">
+
+        <div class="card">
+            <div class="card-image"></div>
+            <div class="card-content">
+                <h3>Bayern Munich</h3>
+                <p>독일 최강 팀으로, 분데스리가 우승을 다수 차지.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image"></div>
+            <div class="card-content">
+                <h3>Borussia Dortmund</h3>
+                <p>열정적인 홈 팬과 공격적인 스타일로 유명.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image"></div>
+            <div class="card-content">
+                <h3>RB Leipzig</h3>
+                <p>최근 빠르게 성장하고 있는 신흥 강팀.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image"></div>
+            <div class="card-content">
+                <h3>Bayer Leverkusen</h3>
+                <p>공격적인 축구로 많은 골을 기록하는 팀.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image"></div>
+            <div class="card-content">
+                <h3>Union Berlin</h3>
+                <p>최근 상위권으로 도약한 베를린의 구단.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image"></div>
+            <div class="card-content">
+                <h3>Eintracht Frankfurt</h3>
+                <p>유로파 리그 우승 경험이 있는 팀.</p>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+<script>
+    const menuBtn = document.querySelector('.menu');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+
+    menuBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+        overlay.classList.toggle('show');
+    });
+
+    overlay.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('show');
+    });
+</script>
 
 </body>
 </html>

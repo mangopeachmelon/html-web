@@ -14,61 +14,95 @@
     <div class="menu">☰</div>
 </header>
 
-<p><a href="index.html">← 메인으로 돌아가기</a></p>
-
-<h1>Serie A 주요 팀</h1>
-
-<div class="card-container">
-
-    <div class="card">
-        <div class="card-image"></div>
-        <div class="card-content">
-            <h3>Juventus</h3>
-            <p>이탈리아를 대표하는 명문 클럽, 세리에 A 다수 우승.</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-image"></div>
-        <div class="card-content">
-            <h3>Inter Milan</h3>
-            <p>인테르나치오날레, 밀라노를 연고로 하는 강팀.</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-image"></div>
-        <div class="card-content">
-            <h3>AC Milan</h3>
-            <p>챔피언스리그 우승 경험이 많은 이탈리아의 전통 강호.</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-image"></div>
-        <div class="card-content">
-            <h3>Napoli</h3>
-            <p>최근 리그 우승을 차지한 남부 이탈리아의 강팀.</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-image"></div>
-        <div class="card-content">
-            <h3>AS Roma</h3>
-            <p>로마를 연고로 하는 구단, 열정적인 팬층을 보유.</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-image"></div>
-        <div class="card-content">
-            <h3>Lazio</h3>
-            <p>로마의 또 다른 클럽으로, 꾸준히 상위권을 유지.</p>
-        </div>
-    </div>
-
+<div class="sidebar" id="sidebar">
+    <h3>카테고리</h3>
+    <ul>
+        <li><a href="index.html">홈</a></li>
+        <li><a href="premier-league.html">Premier League</a></li>
+        <li><a href="la-liga.html">La Liga</a></li>
+        <li><a href="serie-a.html">Serie A</a></li>
+        <li><a href="bundesliga.html">Bundesliga</a></li>
+        <li><a href="ligue1.html">Ligue 1</a></li>
+    </ul>
 </div>
+
+<div class="overlay" id="overlay"></div>
+
+<main class="container">
+
+    <p><a href="index.html" class="back-link">← 메인으로 돌아가기</a></p>
+
+    <h1>Serie A 주요 팀</h1>
+
+    <div class="card-container">
+
+        <div class="card">
+            <div class="card-image"></div>
+            <div class="card-content">
+                <h3>Juventus</h3>
+                <p>이탈리아를 대표하는 명문 클럽, 세리에 A 다수 우승.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image"></div>
+            <div class="card-content">
+                <h3>Inter Milan</h3>
+                <p>인테르나치오날레, 밀라노를 연고로 하는 강팀.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image"></div>
+            <div class="card-content">
+                <h3>AC Milan</h3>
+                <p>챔피언스리그 우승 경험이 많은 이탈리아의 전통 강호.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image"></div>
+            <div class="card-content">
+                <h3>Napoli</h3>
+                <p>최근 리그 우승을 차지한 남부 이탈리아의 강팀.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image"></div>
+            <div class="card-content">
+                <h3>AS Roma</h3>
+                <p>로마를 연고로 하는 구단, 열정적인 팬층을 보유.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image"></div>
+            <div class="card-content">
+                <h3>Lazio</h3>
+                <p>로마의 또 다른 클럽으로, 꾸준히 상위권을 유지.</p>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+<script>
+    const menuBtn = document.querySelector('.menu');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+
+    menuBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+        overlay.classList.toggle('show');
+    });
+
+    overlay.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('show');
+    });
+</script>
 
 </body>
 </html>

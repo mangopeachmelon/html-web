@@ -14,73 +14,95 @@
     <div class="menu">☰</div>
 </header>
 
-<p><a href="index.html">← 메인으로 돌아가기</a></p>
+<div class="sidebar" id="sidebar">
+    <h3>카테고리</h3>
+    <ul>
+        <li><a href="index.html">홈</a></li>
+        <li><a href="premier-league.html">Premier League</a></li>
+        <li><a href="la-liga.html">La Liga</a></li>
+        <li><a href="serie-a.html">Serie A</a></li>
+        <li><a href="bundesliga.html">Bundesliga</a></li>
+        <li><a href="ligue1.html">Ligue 1</a></li>
+    </ul>
+</div>
 
-<h1>Premier League 주요 팀</h1>
+<div class="overlay" id="overlay"></div>
 
-<div class="card-container">
+<main class="container">
 
-    <a href="post1.html">
+    <p><a href="index.html" class="back-link">← 메인으로 돌아가기</a></p>
+
+    <h1>Premier League 주요 팀</h1>
+
+    <div class="card-container">
+
         <div class="card">
             <div class="card-image"></div>
             <div class="card-content">
                 <h3>Manchester City</h3>
-                <p>프리미어리그 최강 팀 중 하나</p>
+                <p>프리미어리그 최강 팀 중 하나.</p>
             </div>
         </div>
-    </a>
 
-    <a href="post2.html">
         <div class="card">
             <div class="card-image"></div>
             <div class="card-content">
                 <h3>Manchester United</h3>
-                <p>프리미어리그 전통의 명문 구단</p>
+                <p>프리미어리그 전통의 명문 구단.</p>
             </div>
         </div>
-    </a>
 
-    <a href="post3.html">
         <div class="card">
             <div class="card-image"></div>
             <div class="card-content">
                 <h3>Chelsea FC</h3>
-                <p>런던 기반의 강호 구단</p>
+                <p>런던 기반의 강호 구단.</p>
             </div>
         </div>
-    </a>
 
-    <a href="post4.html">
         <div class="card">
             <div class="card-image"></div>
             <div class="card-content">
                 <h3>Arsenal FC</h3>
-                <p>북런던의 전통적 명문 구단</p>
+                <p>북런던의 전통적 명문 구단.</p>
             </div>
         </div>
-    </a>
 
-    <a href="post5.html">
         <div class="card">
             <div class="card-image"></div>
             <div class="card-content">
                 <h3>Liverpool FC</h3>
-                <p>유럽 대항전 강자</p>
+                <p>유럽 대항전에서 강한 모습을 보여온 팀.</p>
             </div>
         </div>
-    </a>
 
-    <a href="post6.html">
         <div class="card">
             <div class="card-image"></div>
             <div class="card-content">
                 <h3>Tottenham Hotspur</h3>
-                <p>손흥민이 활약하는 토트넘 홋스퍼</p>
+                <p>손흥민이 활약하는 북런던의 구단.</p>
             </div>
         </div>
-    </a>
 
-</div>
+    </div>
+
+</main>
+
+<script>
+    const menuBtn = document.querySelector('.menu');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+
+    menuBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+        overlay.classList.toggle('show');
+    });
+
+    overlay.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('show');
+    });
+</script>
 
 </body>
 </html>
