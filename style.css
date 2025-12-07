@@ -46,3 +46,34 @@ a {
     color: black;
     font-weight: 500;
 }
+
+/* ------- 헤더 (상단바) ------- */
+header {
+    width: 100%;
+    padding: 15px 20px;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #ffffff;
+    border-bottom: 1px solid #ddd;
+
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* 헤더 제목 */
+header .logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* 메뉴 버튼 */
+header .menu {
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none;
+}
