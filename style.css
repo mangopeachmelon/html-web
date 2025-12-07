@@ -29,6 +29,20 @@ h2 {
     margin-bottom: 10px;
 }
 
+.container h1 {
+    letter-spacing: 1px;
+}
+
+.container h1::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    margin: 10px auto 0;
+    background: #222;
+    border-radius: 999px;
+}
+
 /* 기본 링크 스타일 */
 a {
     text-decoration: none;
@@ -252,4 +266,40 @@ header .menu {
     transform: translateY(-2px);
     box-shadow: 0 8px 18px rgba(0,0,0,0.35);
     background: #ffffff;
+}
+
+/* 화면이 900px 이하(태블릿 정도)일 때: 카드 2열 */
+@media (max-width: 900px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .container {
+        max-width: 95%;
+        padding: 24px 16px 32px;
+    }
+}
+
+/* 화면이 600px 이하(폰)일 때: 카드 1열 */
+@media (max-width: 600px) {
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+    }
+
+    .hero-btn {
+        font-size: 14px;
+        padding: 8px 18px;
+    }
 }
