@@ -77,3 +77,60 @@ header .menu {
     cursor: pointer;
     user-select: none;
 }
+
+/* ===== 사이드바 메뉴 ===== */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -220px;          /* 기본은 화면 밖에 숨겨놓기 */
+    width: 200px;
+    height: 100%;
+    background: #ffffff;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: left 0.3s ease;
+    text-align: left;
+    z-index: 20;
+}
+
+.sidebar.open {
+    left: 0;               /* 열릴 때 화면 안으로 들어옴 */
+}
+
+.sidebar h3 {
+    margin-top: 0;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    color: black;
+    text-decoration: none;
+}
+
+/* 화면 어둡게 덮는 배경 */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 15;
+}
+
+.overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
