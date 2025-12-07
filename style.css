@@ -181,3 +181,43 @@ header .menu {
     justify-items: center; /* 카드 가운데 정렬 */
     margin-top: 20px;
 }
+
+/* ===== 맨 위 축구 배경 Hero 섹션 ===== */
+.hero {
+    height: 100vh; /* 화면 한 장 꽉 채우기 */
+    background-image: url("https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding-top: 80px; /* 위에 고정 헤더만큼 여백 */
+}
+
+/* 어둡게 덮는 반투명 레이어 */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+/* 글자 박스 */
+.hero-content {
+    position: relative; /* ::before 위에 오게 */
+    padding: 20px 30px;
+    border-radius: 12px;
+}
+
+.hero-content h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin: 0;
+}
