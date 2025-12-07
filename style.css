@@ -8,11 +8,13 @@ body {
 
 /* 내용 영역 컨테이너: 가운데 정렬 + 폭 제한 */
 .container {
-    max-width: 1000px;   /* 내용 최대 폭 */
-    margin: 80px auto 40px;  /* 위는 헤더 때문에 여백, 아래는 일반 여백 */
-    padding: 0 20px;
+    max-width: 1000px;
+    margin: 80px auto 40px;
+    padding: 30px 30px 40px;
     text-align: center;
-    background: #ffffff; /* 흰색 박스 느낌 */
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
 
 /* 메인 타이틀 & 섹션 제목 */
@@ -134,19 +136,18 @@ header .menu {
 .card {
     width: 250px;
     background: white;
-    border: 1px solid #ddd;
-    border-radius: 10px;
+    border-radius: 16px;
     display: inline-block;
     margin: 0;
     overflow: hidden;
     text-align: left;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.16);
 }
 
 /* 카드 내부 이미지 자리 */
@@ -220,4 +221,35 @@ header .menu {
 .hero-content p {
     font-size: 18px;
     margin: 0;
+}
+
+.hero-content h1 {
+    font-size: 40px;
+    margin-bottom: 12px;
+    text-shadow: 0 3px 8px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+/* Hero 버튼 */
+.hero-btn {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #222;
+    font-weight: 600;
+    font-size: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.hero-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+    background: #ffffff;
 }
