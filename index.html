@@ -2,99 +2,95 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>팀프로젝트</title>
+    <title>유럽 5대 리그</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
+<header>
     <div class="logo">
         <a href="index.html">유럽 5대 리그</a>
     </div>
     <div class="menu">☰</div>
-    </header>
+</header>
 
-     <div class="sidebar" id="sidebar">
-        <h3>카테고리</h3>
-        <ul>
-            <li><a href="index.html">홈</a></li>
-            <li><a href="post1.html">글 1</a></li>
-            <li><a href="post2.html">글 2</a></li>
-            <li><a href="post3.html">글 3</a></li>
-            <li><a href="post4.html">글 4</a></li>
-            <li><a href="post5.html">글 5</a></li>
-            <li><a href="post5.html">글 6</a></li>
-        </ul>
-    </div>
-
-    <div class="overlay" id="overlay"></div>
-
-    <p>팀프로젝트</p>
-
-    <h1>블로그 메인</h1>
-
-    <h2>메인 페이지</h2>
-    <div class="big-box">이미지 1</div>
-    <div class="big-box">이미지 2</div>
-
-    <h2>유럽 5대 리그</h2>
-
-<div class="card-container">
-
-    <a href="premier-league.html">
-        <div class="card">
-            <div class="card-image"></div>
-            <div class="card-content">
-                <h3>Premier League</h3>
-                <p>잉글랜드 최고의 프로 축구 리그</p>
-            </div>
-        </div>
-    </a>
-
-    <a href="la-liga.html">
-        <div class="card">
-            <div class="card-image"></div>
-            <div class="card-content">
-                <h3>La Liga</h3>
-                <p>스페인 라리가, 세계적인 스타 배출</p>
-            </div>
-        </div>
-    </a>
-
-    <a href="serie-a.html">
-        <div class="card">
-            <div class="card-image"></div>
-            <div class="card-content">
-                <h3>Serie A</h3>
-                <p>전술과 수비의 명가, 이탈리아 세리에A</p>
-            </div>
-        </div>
-    </a>
-
-    <a href="bundesliga.html">
-        <div class="card">
-            <div class="card-image"></div>
-            <div class="card-content">
-                <h3>Bundesliga</h3>
-                <p>독일 분데스리가의 빠르고 공격적인 축구</p>
-            </div>
-        </div>
-    </a>
-
-    <a href="ligue1.html">
-        <div class="card">
-            <div class="card-image"></div>
-            <div class="card-content">
-                <h3>Ligue 1</h3>
-                <p>프랑스 리그 앙, PSG 등 강팀들의 소속 리그</p>
-            </div>
-        </div>
-    </a>
-
+<!-- 사이드바 메뉴 -->
+<div class="sidebar" id="sidebar">
+    <h3>카테고리</h3>
+    <ul>
+        <li><a href="index.html">홈</a></li>
+        <li><a href="premier-league.html">Premier League</a></li>
+        <li><a href="la-liga.html">La Liga</a></li>
+        <li><a href="serie-a.html">Serie A</a></li>
+        <li><a href="bundesliga.html">Bundesliga</a></li>
+        <li><a href="ligue1.html">Ligue 1</a></li>
+    </ul>
 </div>
 
- 
+<div class="overlay" id="overlay"></div>
+
+<main class="container">
+
+    <h1>유럽 5대 리그</h1>
+    <h2>리그 목록</h2>
+
+    <div class="card-container">
+
+        <a href="premier-league.html">
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-content">
+                    <h3>Premier League</h3>
+                    <p>잉글랜드 최고의 프로 축구 리그</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="la-liga.html">
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-content">
+                    <h3>La Liga</h3>
+                    <p>스페인 라리가, 세계적인 스타 배출</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="serie-a.html">
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-content">
+                    <h3>Serie A</h3>
+                    <p>전술과 수비의 명가, 이탈리아 세리에 A</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="bundesliga.html">
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-content">
+                    <h3>Bundesliga</h3>
+                    <p>독일 분데스리가의 빠르고 공격적인 축구</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="ligue1.html">
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-content">
+                    <h3>Ligue 1</h3>
+                    <p>프랑스 리그 앙, PSG 등 강팀들의 소속 리그</p>
+                </div>
+            </div>
+        </a>
+
+    </div>
+
+</main>
+
 <script>
     const menuBtn = document.querySelector('.menu');
     const sidebar = document.getElementById('sidebar');
@@ -110,5 +106,6 @@
         overlay.classList.remove('show');
     });
 </script>
+
 </body>
 </html>
