@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>FC Barcelona</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <a href="index.html">유럽 5대 리그</a>
+    </div>
+    <div class="menu">☰</div>
+</header>
+
+<div class="sidebar" id="sidebar">
+    <h3>카테고리</h3>
+    <ul>
+        <li><a href="index.html">홈</a></li>
+        <li><a href="premier-league.html">Premier League</a></li>
+        <li><a href="la-liga.html">La Liga</a></li>
+        <li><a href="serie-a.html">Serie A</a></li>
+        <li><a href="Bundesliga.html">Bundesliga</a></li>
+        <li><a href="ligue1.html">Ligue 1</a></li>
+    </ul>
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+<main class="container">
+
+    <p><a href="la-liga.html" class="back-link">← La Liga로 돌아가기</a></p>
+
+    <h1>FC Barcelona</h1>
+
+    <p>
+        FC 바르셀로나는 카탈루냐 바르셀로나를 연고로 하는 구단으로,
+        공격적인 패스 축구와 유스 시스템으로 유명합니다.
+    </p>
+    <p>
+        라리가와 챔피언스리그에서 수많은 우승을 차지했으며,
+        전 세계적인 팬층을 보유하고 있습니다.
+    </p>
+
+</main>
+
+<script>
+    const menuBtn = document.querySelector('.menu');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+
+    menuBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+        overlay.classList.toggle('show');
+    });
+
+    overlay.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('show');
+    });
+</script>
+
+</body>
+</html>
