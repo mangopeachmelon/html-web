@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>unionberlin</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <a href="../index.html">유럽 5대 리그</a>
+    </div>
+    <div class="menu">☰</div>
+</header>
+
+<div class="sidebar" id="sidebar">
+    <h3>카테고리</h3>
+    <ul>
+        <li><a href="../index.html">홈</a></li>
+        <li><a href="../premier-league.html">Premier League</a></li>
+        <li><a href="../la-liga.html">La Liga</a></li>
+        <li><a href="../serie-a.html">Serie A</a></li>
+        <li><a href="../Bundesliga.html">Bundesliga</a></li>
+        <li><a href="../ligue1.html">Ligue 1</a></li>
+    </ul>
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+<main class="container">
+
+    <p><a href="../Bundesliga.html" class="back-link">← Bundesliga로 돌아가기</a></p>
+
+    <h1>unionberlin</h1>
+
+    <p>
+        바이에른 뮌헨은 독일 뮌헨을 연고로 하는 클럽으로,
+        분데스리가와 챔피언스리그에서 수많은 우승을 차지한 명문 팀입니다.
+    </p>
+    <p>
+        압도적인 공격력과 두터운 선수층을 바탕으로 매 시즌 우승 후보로 꼽힙니다.
+    </p>
+
+</main>
+
+<script>
+    const menuBtn = document.querySelector('.menu');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+
+    menuBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+        overlay.classList.toggle('show');
+    });
+
+    overlay.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('show');
+    });
+</script>
+
+</body>
+</html>
