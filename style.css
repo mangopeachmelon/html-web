@@ -168,7 +168,9 @@ header .menu {
 .card-image {
     width: 100%;
     height: 150px;
-    background: #e2e2e2; /* 나중에 진짜 이미지 넣기 가능 */
+    object-fit: cover;   /* 이미지 비율 유지 + 카드에 꽉 차게 */
+    border-radius: 8px 8px 0 0;
+    display: block;
 }
 
 /* 카드 내용 */
