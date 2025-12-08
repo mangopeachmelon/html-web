@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>napoli</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo"><a href="index.html">유럽 5대 리그</a></div>
+    <div class="menu">☰</div>
+</header>
+
+<div class="sidebar" id="sidebar">
+    <h3>카테고리</h3>
+    <ul>
+        <li><a href="index.html">홈</a></li>
+        <li><a href="premier-league.html">Premier League</a></li>
+        <li><a href="la-liga.html">La Liga</a></li>
+        <li><a href="serie-a.html">Serie A</a></li>
+        <li><a href="Bundesliga.html">Bundesliga</a></li>
+        <li><a href="ligue1.html">Ligue 1</a></li>
+    </ul>
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+<main class="container">
+
+    <p><a href="serie-a.html" class="back-link">← Serie A로 돌아가기</a></p>
+
+    <h1>napoli
+    <p>
+        인터 밀란은 이탈리아 밀라노를 연고로 하는 명문 구단으로,
+        세리에 A와 챔피언스리그 모두에서 우승 경험을 가진 강팀입니다.
+    </p>
+    <p>
+        전술적 완성도와 강력한 수비 조직력으로 항상 우승 후보로 꼽힙니다.
+    </p>
+
+</main>
+
+<script>
+const menuBtn = document.querySelector('.menu');
+const sidebar = document.getElementById('sidebar');
+const overlay = document.getElementById('overlay');
+menuBtn.addEventListener('click', ()=>{sidebar.classList.toggle('open');overlay.classList.toggle('show');});
+overlay.addEventListener('click', ()=>{sidebar.classList.remove('open');overlay.classList.remove('show');});
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
