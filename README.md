@@ -74,7 +74,7 @@ R&R(Role and Responsibilities)을 명확히 하여 효율적으로 협업했습�
 ---
 
 ## 🚀 배포 주소
-* **GitHub Pages:** (여기에 깃허브 페이지 설정 후 나오는 링크를 붙여넣으세요)
+* **GitHub Pages:** https://mangopeachmelon.github.io/html-web/
 
 ---
 © 2025 European Top 5 Leagues Project. Created by Kangsan, Geonhee, Hajoon.
