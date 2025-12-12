@@ -1,6 +1,11 @@
 /* =========================
    [style.css 최종 통합본]
+   - 폰트, 유리 질감, 반응형, 애니메이션, 선수 카드 디자인 통합
 ========================= */
+
+/* 1. 폰트 불러오기 (Pretendard) */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
 * { box-sizing: border-box; }
 
 html, body {
@@ -8,8 +13,13 @@ html, body {
   padding: 0;
   font-family: "Pretendard", "Noto Sans KR", sans-serif;
   color: #111;
-  background: #f3f4f6;
-  scroll-behavior: smooth; /* 스크롤 부드럽게 */
+  background-color: #f3f4f6;
+  
+  /* 배경 패턴 (은은한 점) */
+  background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+  background-size: 20px 20px;
+  
+  scroll-behavior: smooth; /* 부드러운 스크롤 */
 }
 
 a { text-decoration: none; color: inherit; }
@@ -20,17 +30,20 @@ body { opacity: 0; transition: opacity 0.3s ease-in-out; }
 body.page-ready { opacity: 1; }
 body.page-leave { opacity: 0; }
 
-/* === 헤더 === */
+/* === 헤더 (유리 질감) === */
 header {
   position: sticky; top: 0; z-index: 1000;
-  height: 64px; background: rgba(255,255,255,0.95);
-  border-bottom: 1px solid #e6e6e6;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.75); /* 반투명 */
+  backdrop-filter: blur(12px);          /* 블러 효과 */
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   display: flex; align-items: center; padding: 0 18px; gap: 14px;
 }
 .menu { order: 1; font-size: 28px; cursor: pointer; }
 .logo { order: 2; font-weight: 800; font-size: 20px; }
 
-/* === 사이드바 === */
+/* === 사이드바 & 오버레이 === */
 .sidebar {
   position: fixed; top: 0; left: -280px;
   width: 280px; height: 100vh; background: #fff;
@@ -49,7 +62,7 @@ header {
 }
 .overlay.show { opacity: 1; visibility: visible; }
 
-/* === Hero 섹션 (메인 배경) === */
+/* === Hero 섹션 (메인화면) === */
 .hero {
   height: calc(100vh - 64px);
   background-image: url("https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg");
@@ -82,44 +95,65 @@ header {
   box-shadow: 0 18px 40px rgba(0,0,0,0.08);
   padding: 34px 26px 46px;
 }
-.back-link { color: #2563eb; font-weight: 700; margin-bottom: 10px; display: inline-block; }
 
-/* === 카드 그리드 (리그/팀 목록) === */
+/* 뒤로가기 링크 (알약 버튼 스타일) */
+.back-link {
+  display: inline-block; padding: 8px 16px;
+  background-color: #f1f3f5; color: #495057;
+  border-radius: 20px; font-size: 14px; font-weight: 600;
+  transition: 0.2s; margin-bottom: 20px;
+}
+.back-link:hover { background-color: #e9ecef; color: #212529; }
+
+/* === 제목 스타일 (그라데이션 & 중앙 정렬) === */
+h1 {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  margin-top: 10px; margin-bottom: 30px;
+}
+h1, h2 {
+  text-align: center !important;
+  letter-spacing: -0.5px; word-break: keep-all;
+}
+.container h2 { margin-top: 50px; margin-bottom: 30px; }
+
+/* === 카드 리스트 (인터랙션 포함) === */
 .card-container {
   display: grid; gap: 28px;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  max-width: 1500px; margin: 34px auto 0;
-  padding: 0 14px;
+  max-width: 1500px; margin: 34px auto 0; padding: 0 14px;
 }
 .card {
   background: #fff; border-radius: 24px; padding: 28px 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  height: 360px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08); height: 360px;
   display: flex; flex-direction: column; align-items: center;
-  text-align: center; transition: 0.2s;
+  text-align: center; overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
 }
-.card:hover { transform: translateY(-8px); box-shadow: 0 18px 40px rgba(0,0,0,0.12); }
-.card img { width: 120px; height: 120px; object-fit: contain; margin-bottom: 18px; }
+.card img { width: 120px; height: 120px; object-fit: contain; margin-bottom: 18px; transition: transform 0.5s ease; }
+.card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12); }
+.card:hover img { transform: scale(1.12); }
 
-/* === [핵심] 선수 프로필 & 상세 페이지 스타일 === */
-/* 1. 레이아웃 */
+/* === [핵심] 선수 프로필 (상세 페이지) === */
 .player-profile {
   display: flex; flex-direction: column; align-items: center;
   margin: 60px auto; padding: 0 20px; max-width: 800px;
 }
-/* 2. figure 태그 공백 제거 (오른쪽 쏠림 해결) */
 .player-profile figure {
   margin: 0 !important; padding: 0 !important;
   display: flex; flex-direction: column; align-items: center; width: 100%;
 }
-/* 3. 이미지 강제 성형 (HTML style 무시) */
+/* 이미지 강제 성형 (!important) */
 .player-profile img {
   width: 250px !important; height: 250px !important;
   object-fit: cover !important; border-radius: 50% !important;
   border: 5px solid #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.15);
   margin-bottom: 20px;
 }
-/* 4. 선수 이름 및 설명 박스 */
+/* 설명 박스 */
 .player-profile figcaption {
   font-size: 24px; font-weight: 800; color: #111; margin-bottom: 15px;
 }
@@ -129,7 +163,7 @@ header {
 }
 .player-info strong { color: #2563eb; font-weight: 900; margin-right: 6px; }
 
-/* === 팀 상세 네비게이션 (이전/다음 팀) === */
+/* === 팀 이동 버튼 === */
 .team-nav {
   display: flex; justify-content: space-between; margin-top: 40px; padding-top: 20px;
   border-top: 1px solid #eee;
@@ -140,30 +174,8 @@ header {
 }
 .team-nav a:hover { background: #e9ecef; color: #2563eb; }
 
-/* === 반응형 === */
-@media (max-width: 700px) {
-  .hero-content h1 { font-size: 32px; }
-  .card-container { grid-template-columns: 1fr; }
-}
-
-/* =========================
-   [긴급 수정] 제목 가운데 정렬
-   - 팀 이름과 소제목이 왼쪽으로 쏠리는 문제 해결
-========================= */
-h1, h2 {
-  text-align: center !important; /* 무조건 가운데로! */
-  letter-spacing: -0.5px;        /* 글자 간격 살짝 좁혀서 세련되게 */
-  word-break: keep-all;          /* 단어 중간에 줄바꿈 되지 않게 */
-}
-
-/* 팀 이름(h1) 위아래 여백 */
-.container h1 {
-  margin-top: 10px;
-  margin-bottom: 30px;
-}
-
-/* 소제목(h2) 위아래 여백 */
-.container h2 {
-  margin-top: 50px;
-  margin-bottom: 30px;
+/* === 푸터 === */
+footer {
+  background: #111; color: #aaa; padding: 40px 20px;
+  text-align: center; margin-top: 80px; font-size: 14px;
 }
