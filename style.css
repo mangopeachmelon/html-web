@@ -1,401 +1,147 @@
 /* =========================
-   기본 세팅
+   [style.css 최종 통합본]
 ========================= */
 * { box-sizing: border-box; }
 
 html, body {
   margin: 0;
   padding: 0;
-  font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif;
+  font-family: "Pretendard", "Noto Sans KR", sans-serif;
   color: #111;
   background: #f3f4f6;
+  scroll-behavior: smooth; /* 스크롤 부드럽게 */
 }
 
 a { text-decoration: none; color: inherit; }
 img { display: block; max-width: 100%; }
 
-/* =========================
-   헤더(상단바)
-   - 메뉴 아이콘을 왼쪽으로 이동
-========================= */
+/* === 페이지 전환 애니메이션 === */
+body { opacity: 0; transition: opacity 0.3s ease-in-out; }
+body.page-ready { opacity: 1; }
+body.page-leave { opacity: 0; }
+
+/* === 헤더 === */
 header {
-  position: sticky;  /* 필요하면 fixed로 바꿔도 됨 */
-  top: 0;
-  z-index: 1000;
-
-  height: 64px;
-  background: rgba(255,255,255,0.95);
+  position: sticky; top: 0; z-index: 1000;
+  height: 64px; background: rgba(255,255,255,0.95);
   border-bottom: 1px solid #e6e6e6;
-
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 14px;
-
-  padding: 0 18px;
+  display: flex; align-items: center; padding: 0 18px; gap: 14px;
 }
+.menu { order: 1; font-size: 28px; cursor: pointer; }
+.logo { order: 2; font-weight: 800; font-size: 20px; }
 
-/* HTML이 logo -> menu 순서여도, CSS로 menu를 맨 앞(왼쪽)으로 */
-.menu { order: 1; }
-.logo { order: 2; }
-
-.logo a {
-  font-weight: 800;
-  font-size: 20px;
-  letter-spacing: -0.2px;
-}
-
-/* 메뉴 아이콘(왼쪽 맨 끝) */
-.menu {
-  font-size: 28px;
-  cursor: pointer;
-  user-select: none;
-  line-height: 1;
-}
-
-/* =========================
-   사이드바(왼쪽에서 나오는 메뉴)
-========================= */
+/* === 사이드바 === */
 .sidebar {
-  position: fixed;
-  top: 0;
-  left: -280px;          /* 닫힌 상태 */
-  width: 280px;
-  height: 100vh;
-  background: #fff;
+  position: fixed; top: 0; left: -280px;
+  width: 280px; height: 100vh; background: #fff;
   box-shadow: 2px 0 18px rgba(0,0,0,0.12);
-  z-index: 1100;
-  transition: left 0.28s ease;
-  padding: 18px 16px;
+  z-index: 1100; transition: left 0.28s ease; padding: 18px 16px;
 }
-
 .sidebar.open { left: 0; }
+.sidebar h3 { margin: 10px 0 12px; font-size: 18px; }
+.sidebar ul { list-style: none; padding: 0; margin: 0; }
+.sidebar li a { display: block; padding: 10px; border-radius: 10px; }
+.sidebar li a:hover { background: #f2f4f7; }
 
-.sidebar h3 {
-  margin: 10px 0 12px;
-  font-size: 18px;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sidebar li a {
-  display: block;
-  padding: 10px 10px;
-  border-radius: 10px;
-  color: #111;
-}
-
-.sidebar li a:hover {
-  background: #f2f4f7;
-}
-
-/* 사이드바 열릴 때 뒤 배경 */
 .overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.2s ease, visibility 0.2s ease;
-  z-index: 1050;
+  position: fixed; inset: 0; background: rgba(0,0,0,0.45);
+  opacity: 0; visibility: hidden; transition: 0.2s; z-index: 1050;
 }
-.overlay.show {
-  opacity: 1;
-  visibility: visible;
-}
+.overlay.show { opacity: 1; visibility: visible; }
 
-/* =========================
-   Hero (첫 화면 배경사진)
-========================= */
+/* === Hero 섹션 (메인 배경) === */
 .hero {
   height: calc(100vh - 64px);
   background-image: url("https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg");
-  background-size: cover;
-  background-position: center 35%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-size: cover; background-position: center;
+  position: relative; display: flex; align-items: center; justify-content: center;
   color: #fff;
 }
+.hero::before { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.45); }
+.hero-content { position: relative; text-align: center; padding: 22px; }
+.hero-content h1 { font-size: 44px; margin-bottom: 10px; }
 
-/* 어두운 오버레이 */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
-}
-
-.hero-content {
-  position: relative;
-  text-align: center;
-  padding: 22px 28px;
-  border-radius: 14px;
-}
-
-.hero-content h1 {
-  font-size: 44px;
-  margin: 0 0 10px;
-  letter-spacing: -0.5px;
-}
-
-.hero-content p {
-  margin: 0 0 18px;
-  font-size: 16px;
-  opacity: 0.95;
-}
-
-/* =========================
-   Hero 버튼 (리그 보러가기) 스타일 수정
-========================= */
+/* Hero 버튼 */
 .hero-btn {
-  display: inline-block;
-  margin-top: 15px;             /* 설명글과 간격 벌리기 */
-  padding: 16px 32px;           /* 버튼을 큼직하게 */
-  
-  background-color: #2563eb;    /* 눈에 띄는 쨍한 파란색 (포인트 컬러) */
-  color: #fff;                  /* 글자색 흰색 */
-  
-  font-size: 18px;              /* 글자 크기 키움 */
-  font-weight: 800;             /* 글자 굵게 */
-  border-radius: 50px;          /* 둥근 알약 모양 */
-  
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4); /* 은은한 파란 그림자 */
-  transition: all 0.3s ease;    /* 애니메이션 부드럽게 */
+  display: inline-block; margin-top: 15px; padding: 16px 32px;
+  background-color: #2563eb; color: #fff;
+  font-size: 18px; font-weight: 800; border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+  transition: all 0.3s ease;
 }
-
-/* 🔥 마우스를 올렸을 때 포인트 효과 (호버) */
 .hero-btn:hover {
-  background-color: #1d4ed8;    /* 색상이 더 진해짐 */
-  transform: translateY(-5px) scale(1.05); /* 버튼이 위로 솟아오르며 커짐 */
-  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.6); /* 그림자가 진해져서 입체감 극대화 */
-  cursor: pointer;
+  background-color: #1d4ed8; transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.6);
 }
 
-/* 클릭했을 때 살짝 눌리는 느낌 */
-.hero-btn:active {
-  transform: translateY(-2px) scale(1.02);
-}
-
-/* =========================
-   메인 컨테이너 (리그/팀 페이지 공통)
-========================= */
+/* === 메인 컨테이너 === */
 .container {
   width: min(1600px, calc(100% - 40px));
   margin: 28px auto 70px;
-  background: #fff;
-  border-radius: 22px;
+  background: #fff; border-radius: 22px;
   box-shadow: 0 18px 40px rgba(0,0,0,0.08);
   padding: 34px 26px 46px;
 }
+.back-link { color: #2563eb; font-weight: 700; margin-bottom: 10px; display: inline-block; }
 
-/* 뒤로가기 링크 */
-.back-link {
-  color: #2563eb;
-  font-weight: 700;
-}
-
-/* =========================
-   제목 스타일
-========================= */
-h1 {
-  text-align: center;
-  font-size: 34px;
-  margin: 10px 0 6px;
-}
-h2 {
-  text-align: center;
-  font-size: 22px;
-  margin: 22px 0 12px;
-}
-
-/* 제목 아래 줄(장식선) 쓰는 경우 */
-.title-line {
-  width: 56px;
-  height: 3px;
-  background: #111;
-  border-radius: 999px;
-  margin: 10px auto 0;
-}
-
-/* =========================
-   카드 그리드
-   ✅ 한 줄 최대 6개 (핵심)
-   ✅ 5개여도 전체가 가운데에 “깔끔하게” 보이도록 max-width로 제어
-========================= */
+/* === 카드 그리드 (리그/팀 목록) === */
 .card-container {
-  display: grid;
-  gap: 28px;
-
-  /* auto-fit + max-width 조합으로 "최대 6개" 느낌 유지 */
+  display: grid; gap: 28px;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-
-  /* 6개까지만 예쁘게 들어가도록 폭 제한(가운데 정렬 효과) */
-  max-width: 1500px;
-  margin: 34px auto 0;
+  max-width: 1500px; margin: 34px auto 0;
   padding: 0 14px;
-
-  align-items: stretch;
 }
-
-/* =========================
-   카드 디자인
-========================= */
 .card {
-    background: #fff;
-    border-radius: 24px;
-    padding: 28px 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-
-    /* ✅ 핵심 */
-    height: 360px;              /* 카드 높이 고정 */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-
-    text-align: center;
+  background: #fff; border-radius: 24px; padding: 28px 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  height: 360px;
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center; transition: 0.2s;
 }
+.card:hover { transform: translateY(-8px); box-shadow: 0 18px 40px rgba(0,0,0,0.12); }
+.card img { width: 120px; height: 120px; object-fit: contain; margin-bottom: 18px; }
 
-.card:hover { transform: translateY(-3px); }
-
-/* 카드 이미지(로고/사진) 중앙 정렬 */
-.card img {
-    width: 120px;
-    height: 120px;
-    object-fit: contain;
-
-    margin-bottom: 18px;
+/* === [핵심] 선수 프로필 & 상세 페이지 스타일 === */
+/* 1. 레이아웃 */
+.player-profile {
+  display: flex; flex-direction: column; align-items: center;
+  margin: 60px auto; padding: 0 20px; max-width: 800px;
 }
-
-
-/* 카드 제목/설명 */
-.card h3 {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 10px;
+/* 2. figure 태그 공백 제거 (오른쪽 쏠림 해결) */
+.player-profile figure {
+  margin: 0 !important; padding: 0 !important;
+  display: flex; flex-direction: column; align-items: center; width: 100%;
 }
-
-.card p {
-    font-size: 14px;
-    line-height: 1.5;
-    color: #555;
-
-    /* ✅ 줄 수 제한 */
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-
-
-  /* 길어지면 2~3줄 정도에서 정리하고 싶으면 주석 해제 */
-  /* display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden; */
+/* 3. 이미지 강제 성형 (HTML style 무시) */
+.player-profile img {
+  width: 250px !important; height: 250px !important;
+  object-fit: cover !important; border-radius: 50% !important;
+  border: 5px solid #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  margin-bottom: 20px;
 }
+/* 4. 선수 이름 및 설명 박스 */
+.player-profile figcaption {
+  font-size: 24px; font-weight: 800; color: #111; margin-bottom: 15px;
+}
+.player-profile .player-info {
+  background-color: #f8f9fa; border-radius: 20px; padding: 30px;
+  width: 100%; text-align: center; line-height: 1.8; color: #444;
+}
+.player-info strong { color: #2563eb; font-weight: 900; margin-right: 6px; }
 
-/* =========================
-   팀 상세 페이지 하단 이전/다음 네비
-========================= */
+/* === 팀 상세 네비게이션 (이전/다음 팀) === */
 .team-nav {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  margin-top: 26px;
+  display: flex; justify-content: space-between; margin-top: 40px; padding-top: 20px;
+  border-top: 1px solid #eee;
 }
-
 .team-nav a {
-  font-weight: 800;
-  color: #2563eb;
+  font-weight: 700; color: #555; padding: 10px 20px;
+  background: #f1f3f5; border-radius: 10px; transition: 0.2s;
 }
+.team-nav a:hover { background: #e9ecef; color: #2563eb; }
 
-/* =========================
-   반응형(모바일)
-========================= */
-@media (max-width: 1400px) {
-    .card-container {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-@media (max-width: 1000px) {
-    .card-container {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
+/* === 반응형 === */
 @media (max-width: 700px) {
-    .card-container {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
-/* =========================
-   (1) 카드 Hover 효과
-   ========================= */
-.card {
-  transition: transform 180ms ease, box-shadow 180ms ease;
-  will-change: transform;
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
-}
-
-/* 카드 전체가 링크(a)일 때도 동일하게 */
-.card a {
-  color: inherit;
-  text-decoration: none;
-  display: block;
-  height: 100%;
-}
-
-/* =========================
-   (2) 페이지 전환(페이드 인/아웃)
-   ========================= */
-body {
-  opacity: 0;
-  transition: opacity 200ms ease;
-}
-
-body.page-ready {
-  opacity: 1;
-}
-
-body.page-leave {
-  opacity: 0;
-}
-
-/* =========================
-   (3) 클릭/탭 느낌 개선(선택)
-   ========================= */
-.card:active {
-  transform: translateY(-4px);
-}
-
-html { scroll-behavior: smooth; }
-
-/* =========================
-   페이지 전환 애니메이션
-========================= */
-body {
-  opacity: 0; /* 처음엔 안 보임 */
-  transition: opacity 0.3s ease-in-out;
-}
-
-/* JS가 로드 완료 후 붙여주는 클래스 */
-body.page-ready {
-  opacity: 1;
-}
-
-/* 링크 클릭 시 붙여주는 클래스 */
-body.page-leave {
-  opacity: 0;
+  .hero-content h1 { font-size: 32px; }
+  .card-container { grid-template-columns: 1fr; }
 }
