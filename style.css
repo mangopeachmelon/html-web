@@ -1,6 +1,7 @@
 /* =========================
-   [style.css 최종 통합본]
-   - 폰트, 유리 질감, 반응형, 애니메이션, 선수 카드 디자인 통합
+   [style.css 최종 완성]
+   - 폰트, 유리 질감, 반응형, 애니메이션 통합
+   - 제목 중앙 정렬 적용
 ========================= */
 
 /* 1. 폰트 불러오기 (Pretendard) */
@@ -15,11 +16,11 @@ html, body {
   color: #111;
   background-color: #f3f4f6;
   
-  /* 배경 패턴 (은은한 점) */
+  /* 배경에 은은한 점 패턴 추가 */
   background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
   background-size: 20px 20px;
   
-  scroll-behavior: smooth; /* 부드러운 스크롤 */
+  scroll-behavior: smooth;
 }
 
 a { text-decoration: none; color: inherit; }
@@ -43,7 +44,7 @@ header {
 .menu { order: 1; font-size: 28px; cursor: pointer; }
 .logo { order: 2; font-weight: 800; font-size: 20px; }
 
-/* === 사이드바 & 오버레이 === */
+/* === 사이드바 === */
 .sidebar {
   position: fixed; top: 0; left: -280px;
   width: 280px; height: 100vh; background: #fff;
@@ -62,7 +63,7 @@ header {
 }
 .overlay.show { opacity: 1; visibility: visible; }
 
-/* === Hero 섹션 (메인화면) === */
+/* === Hero 섹션 === */
 .hero {
   height: calc(100vh - 64px);
   background-image: url("https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg");
@@ -96,7 +97,7 @@ header {
   padding: 34px 26px 46px;
 }
 
-/* 뒤로가기 링크 (알약 버튼 스타일) */
+/* 뒤로가기 버튼 */
 .back-link {
   display: inline-block; padding: 8px 16px;
   background-color: #f1f3f5; color: #495057;
@@ -105,21 +106,26 @@ header {
 }
 .back-link:hover { background-color: #e9ecef; color: #212529; }
 
-/* === 제목 스타일 (그라데이션 & 중앙 정렬) === */
+/* === [수정] 제목 중앙 정렬 스타일 === */
 h1 {
   background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  display: inline-block;
-  margin-top: 10px; margin-bottom: 30px;
+  
+  /* 중앙 정렬 */
+  display: block;        
+  width: fit-content;     
+  margin: 10px auto 30px; 
+  text-align: center;
 }
+
 h1, h2 {
   text-align: center !important;
   letter-spacing: -0.5px; word-break: keep-all;
 }
 .container h2 { margin-top: 50px; margin-bottom: 30px; }
 
-/* === 카드 리스트 (인터랙션 포함) === */
+/* === 카드 리스트 === */
 .card-container {
   display: grid; gap: 28px;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -137,7 +143,7 @@ h1, h2 {
 .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12); }
 .card:hover img { transform: scale(1.12); }
 
-/* === [핵심] 선수 프로필 (상세 페이지) === */
+/* === 선수 프로필 === */
 .player-profile {
   display: flex; flex-direction: column; align-items: center;
   margin: 60px auto; padding: 0 20px; max-width: 800px;
@@ -146,14 +152,12 @@ h1, h2 {
   margin: 0 !important; padding: 0 !important;
   display: flex; flex-direction: column; align-items: center; width: 100%;
 }
-/* 이미지 강제 성형 (!important) */
 .player-profile img {
   width: 250px !important; height: 250px !important;
   object-fit: cover !important; border-radius: 50% !important;
   border: 5px solid #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.15);
   margin-bottom: 20px;
 }
-/* 설명 박스 */
 .player-profile figcaption {
   font-size: 24px; font-weight: 800; color: #111; margin-bottom: 15px;
 }
