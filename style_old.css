@@ -6,7 +6,7 @@ body {
     background: #f6f6f6; /* 연한 회색 배경 */
 }
 
-/* 내용 영역 컨테이너: 가운데 정렬 + 폭 제한 (큰 화면 대응) */
+/* 내용 영역 컨테이너: 가운데 정렬 + 폭 제한 */
 .container {
     max-width: 1400px;
     margin: 80px auto 40px;
@@ -151,9 +151,8 @@ header .menu {
 
 /* 개별 카드 하나 */
 .card {
-    width: 100%;
-    max-width: 320px;      /* 카드 가로 크기(반응형) */
-    min-height: 340px;     /* 카드 세로 크기(거의 고정) */
+    width: 260px;           /* 카드 가로 크기 */
+    min-height: 340px;      /* 카드 세로 크기(거의 고정) */
     background: #ffffff;
     border-radius: 24px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
@@ -200,15 +199,13 @@ header .menu {
 
 /* ===== 카드 전체를 감싸는 그리드 ===== */
 .card-container {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(240px, 1fr)); /* 기본: 3열 */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 30px;              /* 카드 사이 간격 */
     margin-top: 40px;
-    max-width: 1600px;      /* 카드 영역은 조금 더 넓게 */
-    margin-left: auto;
-    margin-right: auto;
-    justify-items: center;  /* 카드 자체를 칼럼 중앙에 */
-    align-items: stretch;
+    max-width: 1600px;     /* 카드 전용 넓이 */
+    margin: 40px auto 0;
 }
 
 /* ===== 맨 위 축구 배경 Hero 섹션 ===== */
@@ -216,7 +213,7 @@ header .menu {
     height: 100vh; /* 화면 한 장 꽉 채우기 */
     background-image: url("https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg");
     background-size: cover;
-    background-position: center 35%;
+    background-position: center;
     position: relative;
     display: flex;
     justify-content: center;
@@ -285,21 +282,10 @@ header .menu {
 /* 화면이 900px 이하(태블릿 정도)일 때: 카드 2열 */
 @media (max-width: 900px) {
     .card-container {
-        grid-template-columns: repeat(2, minmax(220px, 1fr));
-        gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .container {
-        max-width: 95%;
-        padding: 24px 16px 32px;
-    }
-
-    .hero {
-        background-position: center;
-    }
-}
-
-.container {
         max-width: 95%;
         padding: 24px 16px 32px;
     }
@@ -309,33 +295,9 @@ header .menu {
 @media (max-width: 600px) {
     .card-container {
         grid-template-columns: 1fr;
-        gap: 16px;
     }
 
     .card {
-        max-width: 100%;
-    }
-
-    .hero {
-        /* 모바일에서 인물/공이 잘리는 느낌 줄이기 */
-        background-position: 60% center;
-    }
-
-    .hero-content h1 {
-        font-size: 28px;
-    }
-
-    .hero-content p {
-        font-size: 15px;
-    }
-
-    .hero-btn {
-        font-size: 14px;
-        padding: 8px 18px;
-    }
-}
-
-.card {
         width: 100%;
     }
 
@@ -351,6 +313,40 @@ header .menu {
         font-size: 14px;
         padding: 8px 18px;
     }
+}
+
+/* 카드안 로고 영역 */
+.card-logo {
+    width: 100%;
+    height: 200px;             /* 이미지가 차지하는 세로 공간 */
+    display: flex;
+    justify-content: center;   /* 가로 중앙 */
+    align-items: center;       /* 세로 중앙 */
+    background: #ffffff;
+}
+
+/* 실제 로고 이미지 */
+.card-logo img {
+    max-width: 80%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+
+.card-logo {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+}
+
+.card-logo img {
+    max-width: 75%;
+    max-height: 75%;
+    object-fit: contain;
 }
 
 /* 팀 페이지 이전 / 다음 네비게이션 */
@@ -412,44 +408,8 @@ a {
     transform: scale(1.06);
 }
 
-/* 카드 안 로고 영역(이미지 정중앙 고정) */
-.card-logo {
-    width: 100%;
-    height: 200px;             /* 로고 영역 높이 */
-    display: flex;
-    justify-content: center;   /* 가로 중앙 */
-    align-items: center;       /* 세로 중앙 */
-    background: #ffffff;
-}
-
-.card-logo img {
-    max-width: 85%;
-    max-height: 85%;
-    object-fit: contain;
-    display: block;
-    transition: transform 0.2s ease;
-}
-
-.card:hover .card-logo img {
-    transform: scale(1.06);
-}
-
-/* 초대형 화면: 카드 4열 */
-@media (min-width: 1200px) {
-    .card-container {
-        grid-template-columns: repeat(4, minmax(240px, 1fr));
-    }
-}
-
-/* 아주 큰 화면: 컨테이너 폭 살짝 더 확장 */
 @media (min-width: 1600px) {
     .container {
         max-width: 1600px;
-    }
-}
-
-@media (min-width: 1400px) {
-    .hero {
-        background-position: center 30%;
     }
 }
