@@ -1,537 +1,315 @@
-/* 전체 페이지 공통 설정 */
-body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    margin: 0;
-    line-height: 1.6;
-    background: #f6f6f6; /* 연한 회색 배경 */
+/* =========================
+   기본 세팅
+========================= */
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif;
+  color: #111;
+  background: #f3f4f6;
 }
 
-/* 내용 영역 컨테이너: 가운데 정렬 + 폭 제한 (큰 화면 대응) */
-.container {
-    max-width: 1400px;
-    margin: 80px auto 40px;
-    padding: 30px 30px 40px;
-    text-align: center;
-    background: #ffffff;
-    border-radius: 18px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-}
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
 
-/* 메인 타이틀 & 섹션 제목 */
-h1 {
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-
-h2 {
-    font-size: 24px;
-    margin-top: 30px;
-    margin-bottom: 10px;
-}
-
-.container h1 {
-    letter-spacing: 1px;
-}
-
-.container h1::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 3px;
-    margin: 10px auto 0;
-    background: #222;
-    border-radius: 999px;
-}
-
-/* 기본 링크 스타일 */
-a {
-    text-decoration: none;
-    color: black;
-    font-weight: 500;
-}
-
-/* 뒤로가기 링크용 */
-.back-link {
-    margin: 10px 0 20px;
-    display: inline-block;
-    color: #0077cc;
-}
-
-/* ------- 헤더 (상단바) ------- */
+/* =========================
+   헤더(상단바)
+   - 메뉴 아이콘을 왼쪽으로 이동
+========================= */
 header {
-    width: 100%;
-    padding: 15px 20px;
-    box-sizing: border-box;
+  position: sticky;  /* 필요하면 fixed로 바꿔도 됨 */
+  top: 0;
+  z-index: 1000;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  height: 64px;
+  background: rgba(255,255,255,0.95);
+  border-bottom: 1px solid #e6e6e6;
 
-    background: #ffffff;
-    border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 14px;
 
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
+  padding: 0 18px;
 }
 
-/* 헤더 제목 */
-header .logo {
-    font-size: 22px;
-    font-weight: bold;
+/* HTML이 logo -> menu 순서여도, CSS로 menu를 맨 앞(왼쪽)으로 */
+.menu { order: 1; }
+.logo { order: 2; }
+
+.logo a {
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: -0.2px;
 }
 
-/* 메뉴 버튼 */
-header .menu {
-    font-size: 24px;
-    cursor: pointer;
-    user-select: none;
+/* 메뉴 아이콘(왼쪽 맨 끝) */
+.menu {
+  font-size: 28px;
+  cursor: pointer;
+  user-select: none;
+  line-height: 1;
 }
 
-/* ===== 사이드바 메뉴 ===== */
+/* =========================
+   사이드바(왼쪽에서 나오는 메뉴)
+========================= */
 .sidebar {
-    position: fixed;
-    top: 0;
-    left: -220px;          /* 기본은 화면 밖에 숨겨놓기 */
-    width: 200px;
-    height: 100%;
-    background: #ffffff;
-    border-right: 1px solid #ddd;
-    padding: 20px;
-    box-sizing: border-box;
-    transition: left 0.3s ease;
-    text-align: left;
-    z-index: 20;
+  position: fixed;
+  top: 0;
+  left: -280px;          /* 닫힌 상태 */
+  width: 280px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: 2px 0 18px rgba(0,0,0,0.12);
+  z-index: 1100;
+  transition: left 0.28s ease;
+  padding: 18px 16px;
 }
 
-.sidebar.open {
-    left: 0;               /* 열릴 때 화면 안으로 들어옴 */
-}
+.sidebar.open { left: 0; }
 
 .sidebar h3 {
-    margin-top: 0;
-    font-size: 18px;
-    margin-bottom: 15px;
+  margin: 10px 0 12px;
+  font-size: 18px;
 }
 
 .sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.sidebar li {
-    margin-bottom: 10px;
+.sidebar li a {
+  display: block;
+  padding: 10px 10px;
+  border-radius: 10px;
+  color: #111;
 }
 
-.sidebar a {
-    color: black;
-    text-decoration: none;
+.sidebar li a:hover {
+  background: #f2f4f7;
 }
 
-/* 화면 어둡게 덮는 배경 */
+/* 사이드바 열릴 때 뒤 배경 */
 .overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-    z-index: 15;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  z-index: 1050;
 }
-
 .overlay.show {
-    opacity: 1;
-    pointer-events: auto;
+  opacity: 1;
+  visibility: visible;
 }
 
-/* ===== 카드(박스) 스타일 ===== */
-
-
-/* 개별 카드 하나 */
-.card {
-  width: 100%;
-  max-width: 320px;
-  height: 360px;              /* ✅ 높이 완전 고정 */
-  
-  background: #ffffff;
-  border-radius: 24px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-
+/* =========================
+   Hero (첫 화면 배경사진)
+========================= */
+.hero {
+  height: calc(100vh - 64px);
+  background-image: url("https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg");
+  background-size: cover;
+  background-position: center 35%;
+  position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* 위에서부터 정렬 */
-  padding: 22px;               /* 내부 여백 통일 */
-
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
 }
 
-
-.card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+/* 어두운 오버레이 */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
 }
 
-/* 카드 내부 이미지 자리 */
-.card-image {
-    width: 100%;
-    height: 200px;          /* 이미지 영역 높이 ↑ (150 → 200 정도로 키움) */
-    object-fit: contain;    /* 로고 전체가 보이게, 자르지 말고 맞추기 */
-    background: #ffffff;    /* 로고 뒤 배경색(원하면 연한 회색으로 바꿔도 됨) */
-    padding: 20px;          /* 이미지랑 카드 테두리 사이 여백 */
-    display: block;
+.hero-content {
+  position: relative;
+  text-align: center;
+  padding: 22px 28px;
+  border-radius: 14px;
 }
 
-/* 카드 내용 */
-.card-content {
-    padding: 16px 20px 24px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;                /* 내용이 부족해도 카드 높이를 채워줌 */
+.hero-content h1 {
+  font-size: 44px;
+  margin: 0 0 10px;
+  letter-spacing: -0.5px;
 }
 
-.card-content h3 {
-    margin: 0 0 8px 0;
-    font-size: 20px;
+.hero-content p {
+  margin: 0 0 18px;
+  font-size: 16px;
+  opacity: 0.95;
 }
 
-.card-content p {
-    margin: 0;
-    font-size: 14px;
-    line-height: 1.4;
+.hero-content .btn {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: #fff;
+  color: #111;
+  font-weight: 700;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.18);
 }
 
-/* ===== 카드 전체를 감싸는 그리드 ===== */
-.card-container{
+/* =========================
+   메인 컨테이너 (리그/팀 페이지 공통)
+========================= */
+.container {
+  width: min(1600px, calc(100% - 40px));
+  margin: 28px auto 70px;
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+  padding: 34px 26px 46px;
+}
+
+/* 뒤로가기 링크 */
+.back-link {
+  color: #2563eb;
+  font-weight: 700;
+}
+
+/* =========================
+   제목 스타일
+========================= */
+h1 {
+  text-align: center;
+  font-size: 34px;
+  margin: 10px 0 6px;
+}
+h2 {
+  text-align: center;
+  font-size: 22px;
+  margin: 22px 0 12px;
+}
+
+/* 제목 아래 줄(장식선) 쓰는 경우 */
+.title-line {
+  width: 56px;
+  height: 3px;
+  background: #111;
+  border-radius: 999px;
+  margin: 10px auto 0;
+}
+
+/* =========================
+   카드 그리드
+   ✅ 한 줄 최대 6개 (핵심)
+   ✅ 5개여도 전체가 가운데에 “깔끔하게” 보이도록 max-width로 제어
+========================= */
+.card-container {
   display: grid;
-
-  /* ✅ 5열 기준 + 남는 줄 자동 처리 */
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-
   gap: 28px;
 
-  /* ✅ 마지막 줄 가운데 정렬 */
-  justify-content: center;
+  /* auto-fit + max-width 조합으로 "최대 6개" 느낌 유지 */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  /* 6개까지만 예쁘게 들어가도록 폭 제한(가운데 정렬 효과) */
+  max-width: 1500px;
+  margin: 34px auto 0;
+  padding: 0 14px;
 
   align-items: stretch;
-  max-width: 1600px;
-  margin: 40px auto 0;
-  padding: 0 10px;
 }
 
+/* =========================
+   카드 디자인
+========================= */
+.card {
+    background: #fff;
+    border-radius: 24px;
+    padding: 28px 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 
-/* 화면 줄면 자동 3열/2열/1열 */
-/* @media (max-width: 1200px){
-    .card-container{ grid-template-columns: repeat(3, minmax(240px, 1fr)); } */
-@media (max-width: 900px){
-    .card-container{ grid-template-columns: repeat(2, minmax(220px, 1fr)); }
-}
-@media (max-width: 600px){
-    .card-container{ grid-template-columns: 1fr; }
-}
-
-
-/* ===== 맨 위 축구 배경 Hero 섹션 ===== */
-.hero {
-    height: 100vh; /* 화면 한 장 꽉 채우기 */
-    background-image: url("https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg");
-    background-size: cover;
-    background-position: center 35%;
-    position: relative;
+    /* ✅ 핵심 */
+    height: 360px;              /* 카드 높이 고정 */
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    color: white;
+    justify-content: flex-start;
+
     text-align: center;
-    padding-top: 80px; /* 위에 고정 헤더만큼 여백 */
 }
 
-/* 어둡게 덮는 반투명 레이어 */
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.45);
+.card:hover { transform: translateY(-3px); }
+
+/* 카드 이미지(로고/사진) 중앙 정렬 */
+.card img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+
+    margin-bottom: 18px;
 }
 
-/* 글자 박스 */
-.hero-content {
-    position: relative; /* ::before 위에 오게 */
-    padding: 20px 30px;
-    border-radius: 12px;
-}
 
-.hero-content h1 {
-    font-size: 40px;
+/* 카드 제목/설명 */
+.card h3 {
+    font-size: 18px;
+    font-weight: 700;
     margin-bottom: 10px;
 }
 
-.hero-content p {
-    font-size: 18px;
-    margin: 0;
+.card p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555;
+
+    /* ✅ 줄 수 제한 */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+
+  /* 길어지면 2~3줄 정도에서 정리하고 싶으면 주석 해제 */
+  /* display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden; */
 }
 
-.hero-content h1 {
-    font-size: 40px;
-    margin-bottom: 12px;
-    text-shadow: 0 3px 8px rgba(0,0,0,0.5);
-}
-
-.hero-content p {
-    font-size: 18px;
-    margin-bottom: 20px;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.5);
-}
-
-/* Hero 버튼 */
-.hero-btn {
-    display: inline-block;
-    padding: 10px 22px;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.9);
-    color: #222;
-    font-weight: 600;
-    font-size: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-}
-
-.hero-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 18px rgba(0,0,0,0.35);
-    background: #ffffff;
-}
-
-/* 화면이 900px 이하(태블릿 정도)일 때: 카드 2열 */
-@media (max-width: 900px) {
-    .card-container {
-        grid-template-columns: repeat(2, minmax(220px, 1fr));
-        gap: 20px;
-    }
-
-    .container {
-        max-width: 95%;
-        padding: 24px 16px 32px;
-    }
-
-    .hero {
-        background-position: center;
-    }
-}
-
-.container {
-        max-width: 95%;
-        padding: 24px 16px 32px;
-    }
-
-
-/* 화면이 600px 이하(폰)일 때: 카드 1열 */
-@media (max-width: 600px) {
-    .card-container {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-
-    .card {
-        max-width: 100%;
-    }
-
-    .hero {
-        /* 모바일에서 인물/공이 잘리는 느낌 줄이기 */
-        background-position: 60% center;
-    }
-
-    .hero-content h1 {
-        font-size: 28px;
-    }
-
-    .hero-content p {
-        font-size: 15px;
-    }
-
-    .hero-btn {
-        font-size: 14px;
-        padding: 8px 18px;
-    }
-}
-
-.card {
-        width: 100%;
-    }
-
-    .hero-content h1 {
-        font-size: 28px;
-    }
-
-    .hero-content p {
-        font-size: 15px;
-    }
-
-    .hero-btn {
-        font-size: 14px;
-        padding: 8px 18px;
-    }
-
-
-/* 팀 페이지 이전 / 다음 네비게이션 */
+/* =========================
+   팀 상세 페이지 하단 이전/다음 네비
+========================= */
 .team-nav {
-    margin-top: 40px;
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 26px;
 }
 
 .team-nav a {
-    text-decoration: none;
-    font-weight: bold;
-    color: #0077cc;
+  font-weight: 800;
+  color: #2563eb;
 }
 
-.team-nav a:hover {
-    text-decoration: underline;
-}
-
-/* 카드 Hover 효과 */
-.card {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
-}
-
-/* 카드 전체 클릭 시 글자색 유지 */
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-/* 모바일 반응형 
-@media (max-width: 900px) {
+/* =========================
+   반응형(모바일)
+========================= */
+@media (max-width: 1400px) {
     .card-container {
-        gap: 20px;
-    }
-
-    .card {
-        width: 45%;
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
-@media (max-width: 600px) {
-    .card {
-        width: 90%;
-    }
-}*/
-
-/* 카드 hover 시 로고만 살짝 확대 */
-.card-logo img {
-    transition: transform 0.2s ease;
-}
-
-.card:hover .card-logo img {
-    transform: scale(1.06);
-}
-
-/* 카드 안 로고 영역(이미지 정중앙 고정) */
-/* 카드 안 로고 영역 (이미지 중앙 + 고정 높이) */
-.card-logo {
-  width: 100%;
-  height: 140px;             /* ✅ 로고 영역 높이 통일 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 14px;
-}
-
-/* 로고 이미지 */
-.card-logo img {
-  max-width: 80%;
-  max-height: 100%;
-  object-fit: contain;       /* 비율 유지 */
-  display: block;
-  transition: transform 0.2s ease;
-}
-
-
-.card:hover .card-logo img {
-    transform: scale(1.06);
-}
-
-/* 초대형 화면: 카드 4열 */
-@media (min-width: 1200px) {
+@media (max-width: 1000px) {
     .card-container {
-        grid-template-columns: repeat(4, minmax(240px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
-/* 아주 큰 화면: 컨테이너 폭 살짝 더 확장 */
-@media (min-width: 1600px) {
-    .container {
-        max-width: 1600px;
+@media (max-width: 700px) {
+    .card-container {
+        grid-template-columns: repeat(1, 1fr);
     }
-}
-
-@media (min-width: 1400px) {
-    .hero {
-        background-position: center 30%;
-    }
-}
-
-/* 카드 설명 줄 수 고정 (카드 높이 깨짐 방지) */
-.card p{
-    margin: 0;
-    line-height: 1.4;
-
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-
-    line-clamp: 2;          /* 👈 이 줄 추가 (표준 대비) */
-    overflow: hidden;
-}
-
-/* ===== (최종) 리그 목록 카드 그리드 ===== */
-.card-container{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 280px));
-  gap: 28px;
-  justify-content: center;   /* ✅ 마지막 줄 가운데 */
-  align-items: stretch;
-  margin: 40px auto 0;
-  padding: 0 10px;
-}
-
-/* =========================================================
-   FIX PATCH (added by ChatGPT): grid centering + uniform cards
-   - 마지막 줄이 왼쪽에 남지 않게 가운데 정렬
-   - 카드 폭/높이 균일
-   ========================================================= */
-
-/* 카드 그리드: 남는 카드(마지막 줄)도 가운데로 */
-.card-container{
-  display: grid;
-  gap: 28px;
-  grid-template-columns: repeat(auto-fit, 280px);
-  justify-content: center;
-  align-items: stretch;
-  margin: 40px auto 0;
-  padding: 0 10px;
-}
-
-/* 카드 크기 균일(겹쳐 보이는 느낌 완화) */
-.card{
-  width: 280px;
-  height: 360px;
-  box-sizing: border-box;
-}
-
-/* 반응형 */
-@media (max-width: 900px){
-  .card-container{ grid-template-columns: repeat(2, 280px); }
-}
-@media (max-width: 600px){
-  .card-container{ grid-template-columns: 1fr; }
-  .card{ width: 100%; }
 }
