@@ -23,7 +23,7 @@ R&R(Role and Responsibilities)을 명확히 하여 효율적으로 협업했습�
 |:---:|:---|
 | **이강산**<br>(팀장) | • **전체 웹사이트 디자인 총괄:** 레이아웃 구조 설계, 색상 테마 선정 (Blue & White)<br>• **메인 개발:** `index.html` 구조 잡기 및 `style.css` 공통 스타일 개발<br>• **기능 구현:** JavaScript를 활용한 사이드바 메뉴 토글, 화면 전환 애니메이션 구현<br>• **데이터 작업:** 세리에 A 자료 조사 및 상세 페이지 제작, 전체 링크 연결 상태 점검 |
 | **이건희** | • **자료 조사 & 페이지 제작:** 프리미어리그 & 라리가 상세 페이지 코딩<br>• **리소스 관리:** 각 구단 고화질 엠블럼 및 주요 선수 이미지 수집, 편집(누끼 작업 등)<br>• **UI 개선 아이디어:** 카드 리스트 배치 및 이미지 비율 조정 제안 |
-| **노하준** | • **자료 조사 & 페이지 제작:** 분데스리가 & 리그 앙 상세 페이지 코딩<br>• **콘텐츠 작성:** 각 팀의 역사 및 특징 소개글 작성, 데이터 정리<br>• **QA:** 오타 수정 및 브라우저 호환성 테스트 |
+| **노하훈** | • **자료 조사 & 페이지 제작:** 분데스리가 & 리그 앙 상세 페이지 코딩<br>• **콘텐츠 작성:** 각 팀의 역사 및 특징 소개글 작성, 데이터 정리<br>• **QA:** 오타 수정 및 브라우저 호환성 테스트 |
 
 ---
 
@@ -77,4 +77,4 @@ R&R(Role and Responsibilities)을 명확히 하여 효율적으로 협업했습�
 * **GitHub Pages:** https://mangopeachmelon.github.io/html-web/
 
 ---
-© 2025 European Top 5 Leagues Project. Created by Kangsan, Geonhee, Hajoon.
+© 2025 European Top 5 Leagues Project. Created by Kangsan, Geonhee, Hahoon.
