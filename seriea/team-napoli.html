@@ -8,9 +8,7 @@
 <body>
 
 <header>
-    <div class="logo">
-        <a href="../index.html">유럽 5대 리그</a>
-    </div>
+    <div class="logo"><a href="../index.html">유럽 5대 리그</a></div>
     <div class="menu">☰</div>
 </header>
 
@@ -21,49 +19,29 @@
         <li><a href="../premier-league.html">Premier League</a></li>
         <li><a href="../la-liga.html">La Liga</a></li>
         <li><a href="../serie-a.html">Serie A</a></li>
-        <li><a href="../Bundesliga.html">Bundesliga</a></li>
+        <li><a href="../bundesliga.html">Bundesliga</a></li>
         <li><a href="../ligue1.html">Ligue 1</a></li>
     </ul>
 </div>
-
 <div class="overlay" id="overlay"></div>
 
 <main class="container">
+    <a href="../serie-a.html" class="back-link">← Serie A 목록</a>
 
-    <p>
-        <a href="../serie-a.html" class="back-link">
-            ← Serie A로 돌아가기
-        </a>
-    </p>
+    <h1>SSC Napoli</h1>
 
-    <h1>Napoli</h1>
+    <div style="text-align: center; max-width: 800px; margin: 0 auto 40px; line-height: 1.6;">
+        <p>SSC 나폴리는 이탈리아 남부의 자존심으로, 마라도나의 전설이 살아숨쉬는 클럽입니다. 홈 구장은 '스타디오 디에고 아르만도 마라도나'입니다.</p>
+        <p>2025년 현재, 나폴리는 빠른 공격 전개와 기술적인 미드필드 플레이를 바탕으로 리그 정상권 경쟁을 이어가고 있습니다.</p>
+    </div>
 
-   <p>
-        SSC 나폴리는 이탈리아 캄파니아주 나폴리를 연고로 하는 프로 축구 클럽입니다.
-        구단 별명은 **'아주리(Azzurri, 하늘색)'**이며, 홈 구장은 축구의 전설 디에고 마라도나를 기려 명칭이 변경된 **스타디오 디에고 아르만도 마라도나**입니다.
-    </p>
-
-    <p>
-        나폴리는 마라도나 시대 이후 오랜 침체기를 겪었으나, 2020년대 들어 다시 세리에 A의 강력한 우승 후보로 부상했습니다.
-        2025년 현재, 나폴리는 **빠른 공격 전개와 기술적인 미드필드 플레이**를 바탕으로 리그 정상권 경쟁을 이어가고 있습니다.
-        나폴리의 축구에 대한 열정은 이탈리아 내에서도 독보적입니다.
-    </p>
-
-    <h2>🏆 마라도나의 유산과 현대의 영광</h2>
-    <p>
-        나폴리는 1980년대 디에고 마라도나의 활약 덕분에 세리에 A에서 우승하며 전성기를 보냈습니다.
-        최근에는 훌륭한 스카우팅과 효율적인 선수단을 바탕으로 다시 한번 스쿠데토(리그 우승)를 차지하며 구단의 영광을 재현했습니다.
-    </p>
-
-    <hr>
-
-    <h2>⭐ 주요 선수 (Key Players 2025)</h2>
-
-    <hr>
+    <hr style="border: 0; height: 1px; background: #eee; margin: 40px 0;">
+    
+    <h2>⭐ 주요 선수 (Key Players)</h2>
 
     <section class="player-profile">
         <figure>
-            <img src="https://assets.goal.com/images/v3/blt305a1e2d70d38ea6/di%20lorenzo%20napoli.jpg" alt="지오반니 디 로렌초 선수 사진" style="width:700px; height:auto; border-radius:50%;">
+            <img src="https://assets.goal.com/images/v3/blt305a1e2d70d38ea6/di%20lorenzo%20napoli.jpg" alt="지오반니 디 로렌초">
             <figcaption>지오반니 디 로렌초 (Giovanni Di Lorenzo)</figcaption>
         </figure>
         <div class="player-info">
@@ -72,10 +50,10 @@
         </div>
     </section>
 
-<div class="team-nav">
-    <a href="team-acmilan.html">← 이전 팀</a>
-    <a href="team-roma.html">다음 팀 →</a>
-</div>
+    <div class="team-nav">
+        <a href="team-acmilan.html">← 이전 팀</a>
+        <a href="team-roma.html">다음 팀 →</a>
+    </div>
 
 </main>
 
@@ -83,47 +61,15 @@
     const menuBtn = document.querySelector('.menu');
     const sidebar = document.getElementById('sidebar');
     const overlay = document.getElementById('overlay');
-
-    menuBtn.addEventListener('click', () => {
-        sidebar.classList.toggle('open');
-        overlay.classList.toggle('show');
+    menuBtn.addEventListener('click', () => { sidebar.classList.toggle('open'); overlay.classList.toggle('show'); });
+    overlay.addEventListener('click', () => { sidebar.classList.remove('open'); overlay.classList.remove('show'); });
+    window.addEventListener("DOMContentLoaded", () => { document.body.classList.add("page-ready"); });
+    document.addEventListener("click", (e) => {
+        const a = e.target.closest("a");
+        if (!a || !a.href || a.target === "_blank" || a.href.startsWith("javascript:")) return;
+        e.preventDefault(); document.body.classList.add("page-leave");
+        setTimeout(() => window.location.href = a.href, 200);
     });
-
-    overlay.addEventListener('click', () => {
-        sidebar.classList.remove('open');
-        overlay.classList.remove('show');
-    });
-
-      // 페이지 로딩되면 페이드 인
-  window.addEventListener("DOMContentLoaded", () => {
-    document.body.classList.add("page-ready");
-  });
-
-  // 내부 링크 클릭 시 페이드 아웃 후 이동
-  document.addEventListener("click", (e) => {
-    const a = e.target.closest("a");
-    if (!a) return;
-
-    const href = a.getAttribute("href");
-    if (!href) return;
-
-    // 새 탭, 외부링크, 앵커(#)는 기본 동작 유지
-    const isExternal = href.startsWith("http");
-    const isAnchor = href.startsWith("#");
-    const isNewTab = a.target === "_blank";
-    if (isExternal || isAnchor || isNewTab) return;
-
-    // 같은 페이지 내 JS 링크 예외
-    if (href.startsWith("javascript:")) return;
-
-    e.preventDefault();
-    document.body.classList.add("page-leave");
-
-    setTimeout(() => {
-      window.location.href = href;
-    }, 180);
-  });
 </script>
-
 </body>
 </html>

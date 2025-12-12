@@ -8,9 +8,7 @@
 <body>
 
 <header>
-    <div class="logo">
-        <a href="../index.html">유럽 5대 리그</a>
-    </div>
+    <div class="logo"><a href="../index.html">유럽 5대 리그</a></div>
     <div class="menu">☰</div>
 </header>
 
@@ -21,45 +19,29 @@
         <li><a href="../premier-league.html">Premier League</a></li>
         <li><a href="../la-liga.html">La Liga</a></li>
         <li><a href="../serie-a.html">Serie A</a></li>
-        <li><a href="../Bundesliga.html">Bundesliga</a></li>
+        <li><a href="../bundesliga.html">Bundesliga</a></li>
         <li><a href="../ligue1.html">Ligue 1</a></li>
     </ul>
 </div>
-
 <div class="overlay" id="overlay"></div>
 
 <main class="container">
-
-    <p>
-        <a href="../premier-league.html" class="back-link">← Premier League로 돌아가기</a>
-    </p>
+    <a href="../premier-league.html" class="back-link">← Premier League 목록</a>
 
     <h1>Arsenal FC</h1>
 
-    <p>
-        아스날 FC는 잉글랜드 런던을 연고로 하는 가장 성공적인 클럽 중 하나입니다.
-        구단 별명은 **'거너스(The Gunners)'**이며, 홈 구장은 현대적인 **에미레이츠 스타디움(Emirates Stadium)**입니다.
-    </p>
+    <div style="text-align: center; max-width: 800px; margin: 0 auto 40px; line-height: 1.6;">
+        <p>아스날 FC는 잉글랜드 런던을 연고로 하는 가장 성공적인 클럽 중 하나입니다. 구단 별명은 **'거너스(The Gunners)'**입니다.</p>
+        <p>2025년 현재는 젊은 감독과 선수들을 중심으로 **강력한 조직력과 점유율 기반의 공격적인 축구**를 구사하며 리그 우승에 도전하고 있습니다.</p>
+    </div>
 
-    <p>
-        아스날은 **'무패 우승(The Invincibles)'**을 달성했던 전설적인 역사를 가지고 있으며, 
-        2025년 현재는 젊은 감독과 선수들을 중심으로 **강력한 조직력과 점유율 기반의 공격적인 축구**를 구사하며 리그 우승에 도전하고 있습니다. 
-        같은 북런던 라이벌 토트넘과의 **'북런던 더비'**는 매 시즌 큰 화제입니다.
-    </p>
-
-    <h2>✨ 현재 스쿼드 특징 (2025 기준)</h2>
-    <p>
-        아스날은 현재 평균 연령이 낮은 매우 젊은 스쿼드를 자랑하며, 뛰어난 유망주들이 핵심 선수로 성장하여 팀의 전성기를 이끌고 있습니다. 
-        특히 미드필더와 공격진의 유기적인 움직임이 돋보입니다.
-    </p>
+    <hr style="border: 0; height: 1px; background: #eee; margin: 40px 0;">
     
-    <hr>
-    
-    <h2>⭐ 주요 선수 (Key Players 2025)</h2>
+    <h2>⭐ 주요 선수 (Key Players)</h2>
 
     <section class="player-profile">
         <figure>
-            <img src="https://cdn.imweb.me/upload/S20210927e14f9f0cf71bc/8cd65331c7fcd.jpg" alt="부카요 사카 선수 사진" style="width:700px; height:auto; border-radius:50%;">
+            <img src="https://cdn.imweb.me/upload/S20210927e14f9f0cf71bc/8cd65331c7fcd.jpg" alt="부카요 사카">
             <figcaption>부카요 사카 (Bukayo Saka)</figcaption>
         </figure>
         <div class="player-info">
@@ -67,12 +49,10 @@
             <p><strong>특징:</strong> 아스날의 상징적인 선수이자 팀 공격의 핵심. 뛰어난 드리블 능력과 득점력을 겸비한 월드클래스 윙어입니다.</p>
         </div>
     </section>
-    
-    <hr>
-    
+
     <section class="player-profile">
         <figure>
-            <img src="../img/MartinØdegaard.jpg" alt="마르틴 외데고르 선수 사진" style="width:700px; height:auto; border-radius:50%;">
+            <img src="../img/MartinØdegaard.jpg" alt="마르틴 외데고르">
             <figcaption>마르틴 외데고르 (Martin Ødegaard)</figcaption>
         </figure>
         <div class="player-info">
@@ -81,11 +61,9 @@
         </div>
     </section>
 
-    <hr>
-    
     <section class="player-profile">
         <figure>
-            <img src="https://cdn.footballist.co.kr/news/photo/202509/201874_156735_4431.jpg" alt="윌리엄 살리바 선수 사진" style="width:700px; height:auto; border-radius:50%;">
+            <img src="https://cdn.footballist.co.kr/news/photo/202509/201874_156735_4431.jpg" alt="윌리엄 살리바">
             <figcaption>윌리엄 살리바 (William Saliba)</figcaption>
         </figure>
         <div class="player-info">
@@ -94,12 +72,10 @@
         </div>
     </section>
 
-
-<div class="team-nav">
-    <a href="team-chelsea.html">← 이전 팀</a>
-    <a href="team-liverpool.html">다음 팀 →</a>
-</div>
-
+    <div class="team-nav">
+        <a href="team-chelsea.html">← 이전 팀</a>
+        <a href="team-liverpool.html">다음 팀 →</a>
+    </div>
 
 </main>
 
@@ -107,47 +83,15 @@
     const menuBtn = document.querySelector('.menu');
     const sidebar = document.getElementById('sidebar');
     const overlay = document.getElementById('overlay');
-
-    menuBtn.addEventListener('click', () => {
-        sidebar.classList.toggle('open');
-        overlay.classList.toggle('show');
+    menuBtn.addEventListener('click', () => { sidebar.classList.toggle('open'); overlay.classList.toggle('show'); });
+    overlay.addEventListener('click', () => { sidebar.classList.remove('open'); overlay.classList.remove('show'); });
+    window.addEventListener("DOMContentLoaded", () => { document.body.classList.add("page-ready"); });
+    document.addEventListener("click", (e) => {
+        const a = e.target.closest("a");
+        if (!a || !a.href || a.target === "_blank" || a.href.startsWith("javascript:")) return;
+        e.preventDefault(); document.body.classList.add("page-leave");
+        setTimeout(() => window.location.href = a.href, 200);
     });
-
-    overlay.addEventListener('click', () => {
-        sidebar.classList.remove('open');
-        overlay.classList.remove('show');
-    });
-
-  // 페이지 로딩되면 페이드 인
-  window.addEventListener("DOMContentLoaded", () => {
-    document.body.classList.add("page-ready");
-  });
-
-  // 내부 링크 클릭 시 페이드 아웃 후 이동
-  document.addEventListener("click", (e) => {
-    const a = e.target.closest("a");
-    if (!a) return;
-
-    const href = a.getAttribute("href");
-    if (!href) return;
-
-    // 새 탭, 외부링크, 앵커(#)는 기본 동작 유지
-    const isExternal = href.startsWith("http");
-    const isAnchor = href.startsWith("#");
-    const isNewTab = a.target === "_blank";
-    if (isExternal || isAnchor || isNewTab) return;
-
-    // 같은 페이지 내 JS 링크 예외
-    if (href.startsWith("javascript:")) return;
-
-    e.preventDefault();
-    document.body.classList.add("page-leave");
-
-    setTimeout(() => {
-      window.location.href = href;
-    }, 180);
-  });
 </script>
-
 </body>
 </html>

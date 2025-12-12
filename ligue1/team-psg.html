@@ -2,103 +2,13 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paris Saint-Germain</title>
     <link rel="stylesheet" href="../style.css">
-
-    <!-- PSG 페이지 전용(최소) 스타일: 선수 카드 2개를 예쁘게 -->
-    <style>
-        .section-title{
-            margin: 40px 0 14px;
-            font-size: 22px;
-            font-weight: 800;
-            text-align: center;
-        }
-        .section-desc{
-            max-width: 900px;
-            margin: 0 auto 18px;
-            line-height: 1.8;
-            color: #444;
-            text-align: center;
-        }
-
-        /* 선수 카드 그리드(2명) */
-        .players{
-            display: grid;
-            grid-template-columns: repeat(2, minmax(260px, 1fr));
-            gap: 28px;
-            max-width: 1000px;
-            margin: 24px auto 0;
-            padding: 0 10px 10px;
-            justify-content: center;
-        }
-        @media (max-width: 900px){
-            .players{ grid-template-columns: 1fr; }
-        }
-
-        .player-card{
-            background: #fff;
-            border-radius: 18px;
-            box-shadow: 0 10px 24px rgba(0,0,0,0.08);
-            overflow: hidden;
-            text-align: center;
-        }
-        /* 사진을 카드 중앙에 예쁘게 */
-        .player-photo-wrap{
-            height: 220px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 18px;
-            background: #f7f7f7;
-        }
-        .player-photo{
-            width: 90%;
-            max-width: 520px;
-            height: 180px;
-            object-fit: cover;
-            object-position: center;
-            border-radius: 999px; /* 타원형 */
-            display: block;
-            box-shadow: 0 10px 18px rgba(0,0,0,0.10);
-        }
-
-        .player-body{
-            padding: 16px 16px 22px;
-        }
-        .player-name{
-            margin: 6px 0 6px;
-            font-size: 19px;
-            font-weight: 900;
-        }
-        .player-meta{
-            margin: 0 0 10px;
-            font-size: 13px;
-            color: #666;
-        }
-        .player-text{
-            margin: 0;
-            line-height: 1.75;
-            color: #333;
-            font-size: 14.5px;
-        }
-
-        hr{
-            width: 85%;
-            max-width: 950px;
-            margin: 30px auto;
-            border: none;
-            border-top: 1px solid #ddd;
-        }
-    </style>
 </head>
-
 <body>
 
 <header>
-    <div class="logo">
-        <a href="../index.html">유럽 5대 리그</a>
-    </div>
+    <div class="logo"><a href="../index.html">유럽 5대 리그</a></div>
     <div class="menu">☰</div>
 </header>
 
@@ -109,68 +19,48 @@
         <li><a href="../premier-league.html">Premier League</a></li>
         <li><a href="../la-liga.html">La Liga</a></li>
         <li><a href="../serie-a.html">Serie A</a></li>
-        <li><a href="../Bundesliga.html">Bundesliga</a></li>
+        <li><a href="../bundesliga.html">Bundesliga</a></li>
         <li><a href="../ligue1.html">Ligue 1</a></li>
     </ul>
 </div>
-
 <div class="overlay" id="overlay"></div>
 
 <main class="container">
-
-    <p><a href="../ligue1.html" class="back-link">← Ligue 1로 돌아가기</a></p>
+    <a href="../ligue1.html" class="back-link">← Ligue 1 목록</a>
 
     <h1>Paris Saint-Germain</h1>
 
-    <p class="section-desc">
-        파리 생제르맹(PSG)은 프랑스 파리를 연고로 하는 리그 앙의 대표 클럽이다.
-        최근에도 꾸준히 우승 경쟁을 이어가며 프랑스 최상위 전력을 유지하고 있다.
-    </p>
+    <div style="text-align: center; max-width: 800px; margin: 0 auto 40px; line-height: 1.6;">
+        <p>파리 생제르맹(PSG)은 프랑스 파리를 연고로 하는 리그 앙의 대표 클럽이다. 최근에도 꾸준히 우승 경쟁을 이어가며 프랑스 최상위 전력을 유지하고 있다.</p>
+        <p>PSG는 빠른 전환과 측면 공격 전개를 기반으로 경기 주도권을 가져오는 스타일이 특징이며, 조직적인 밸런스를 강화하는 방향으로 팀 색깔을 발전시키고 있다.</p>
+    </div>
 
-    <p class="section-desc">
-        PSG는 빠른 전환과 측면 공격 전개를 기반으로 경기 주도권을 가져오는 스타일이 특징이며,
-        조직적인 밸런스를 강화하는 방향으로 팀 색깔을 발전시키고 있다.
-    </p>
+    <hr style="border: 0; height: 1px; background: #eee; margin: 40px 0;">
+    
+    <h2>⭐ 주요 선수 (Key Players)</h2>
 
-    <hr>
-
-    <h2 class="section-title">⭐ 주요 선수 (2025 기준)</h2>
-
-    <section class="players">
-
-        <!-- 선수 1: 뎀벨레 -->
-        <article class="player-card">
-            <div class="player-photo-wrap">
-                <img class="player-photo" src="../img/player-dembele.jpg" alt="Ousmane Dembélé">
-            </div>
-            <div class="player-body">
-                <div class="player-name">우스만 뎀벨레 (Ousmane Dembélé)</div>
-                <div class="player-meta">포지션: 윙어 (Winger)</div>
-                <p class="player-text">
-                    뛰어난 드리블과 순간 가속으로 측면에서 1대1을 만들어내며,
-                    찬스 메이킹과 전개 속도에서 강점을 보이는 핵심 공격 자원이다.
-                </p>
-            </div>
-        </article>
-
-        <!-- 선수 2: 마르퀴뉴스 -->
-        <article class="player-card">
-            <div class="player-photo-wrap">
-                <img class="player-photo" src="../img/player-marquinhos.jpg" alt="Marquinhos">
-            </div>
-            <div class="player-body">
-                <div class="player-name">마르퀴뉴스 (Marquinhos)</div>
-                <div class="player-meta">포지션: 센터백 (Center Back)</div>
-                <p class="player-text">
-                    팀의 주장으로서 수비 라인을 안정적으로 조율하는 리더다.
-                    대인 수비와 커버 능력이 뛰어나며 후방에서 밸런스를 잡아준다.
-                </p>
-            </div>
-        </article>
-
+    <section class="player-profile">
+        <figure>
+            <img src="../img/player-dembele.jpg" alt="우스만 뎀벨레">
+            <figcaption>우스만 뎀벨레 (Ousmane Dembélé)</figcaption>
+        </figure>
+        <div class="player-info">
+            <p><strong>포지션:</strong> 윙어 (Winger)</p>
+            <p><strong>특징:</strong> 뛰어난 드리블과 순간 가속으로 측면에서 1대1을 만들어내며, 찬스 메이킹과 전개 속도에서 강점을 보이는 핵심 공격 자원이다.</p>
+        </div>
     </section>
 
-    <!-- 이전/다음 팀 네비 -->
+    <section class="player-profile">
+        <figure>
+            <img src="../img/player-marquinhos.jpg" alt="마르퀴뉴스">
+            <figcaption>마르퀴뉴스 (Marquinhos)</figcaption>
+        </figure>
+        <div class="player-info">
+            <p><strong>포지션:</strong> 센터백 (Center Back)</p>
+            <p><strong>특징:</strong> 팀의 주장으로서 수비 라인을 안정적으로 조율하는 리더다. 대인 수비와 커버 능력이 뛰어나며 후방에서 밸런스를 잡아준다.</p>
+        </div>
+    </section>
+
     <div class="team-nav">
         <a href="team-nice.html">← 이전 팀</a>
         <a href="team-marseille.html">다음 팀 →</a>
@@ -182,48 +72,15 @@
     const menuBtn = document.querySelector('.menu');
     const sidebar = document.getElementById('sidebar');
     const overlay = document.getElementById('overlay');
-
-    menuBtn.addEventListener('click', () => {
-        sidebar.classList.toggle('open');
-        overlay.classList.toggle('show');
+    menuBtn.addEventListener('click', () => { sidebar.classList.toggle('open'); overlay.classList.toggle('show'); });
+    overlay.addEventListener('click', () => { sidebar.classList.remove('open'); overlay.classList.remove('show'); });
+    window.addEventListener("DOMContentLoaded", () => { document.body.classList.add("page-ready"); });
+    document.addEventListener("click", (e) => {
+        const a = e.target.closest("a");
+        if (!a || !a.href || a.target === "_blank" || a.href.startsWith("javascript:")) return;
+        e.preventDefault(); document.body.classList.add("page-leave");
+        setTimeout(() => window.location.href = a.href, 200);
     });
-
-    overlay.addEventListener('click', () => {
-        sidebar.classList.remove('open');
-        overlay.classList.remove('show');
-    });
-
-  // 페이지 로딩되면 페이드 인
-  window.addEventListener("DOMContentLoaded", () => {
-    document.body.classList.add("page-ready");
-  });
-
-  // 내부 링크 클릭 시 페이드 아웃 후 이동
-  document.addEventListener("click", (e) => {
-    const a = e.target.closest("a");
-    if (!a) return;
-
-    const href = a.getAttribute("href");
-    if (!href) return;
-
-    // 새 탭, 외부링크, 앵커(#)는 기본 동작 유지
-    const isExternal = href.startsWith("http");
-    const isAnchor = href.startsWith("#");
-    const isNewTab = a.target === "_blank";
-    if (isExternal || isAnchor || isNewTab) return;
-
-    // 같은 페이지 내 JS 링크 예외
-    if (href.startsWith("javascript:")) return;
-
-    e.preventDefault();
-    document.body.classList.add("page-leave");
-
-    setTimeout(() => {
-      window.location.href = href;
-    }, 180);
-  });
-
 </script>
-
 </body>
 </html>

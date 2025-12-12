@@ -2,96 +2,13 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Olympique de Marseille</title>
     <link rel="stylesheet" href="../style.css">
-
-    <style>
-        .section-title{
-            margin: 40px 0 14px;
-            font-size: 22px;
-            font-weight: 800;
-            text-align: center;
-        }
-        .section-desc{
-            max-width: 900px;
-            margin: 0 auto 18px;
-            line-height: 1.8;
-            color: #444;
-            text-align: center;
-        }
-        .players{
-            display: grid;
-            grid-template-columns: repeat(2, minmax(260px, 1fr));
-            gap: 28px;
-            max-width: 1000px;
-            margin: 24px auto 0;
-            padding: 0 10px 10px;
-            justify-content: center;
-        }
-        @media (max-width: 900px){
-            .players{ grid-template-columns: 1fr; }
-        }
-        .player-card{
-            background: #fff;
-            border-radius: 18px;
-            box-shadow: 0 10px 24px rgba(0,0,0,0.08);
-            overflow: hidden;
-            text-align: center;
-        }
-        .player-photo-wrap{
-            height: 220px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 18px;
-            background: #f7f7f7;
-        }
-        .player-photo{
-            width: 90%;
-            max-width: 520px;
-            height: 180px;
-            object-fit: cover;
-            object-position: center;
-            border-radius: 999px;
-            display: block;
-            box-shadow: 0 10px 18px rgba(0,0,0,0.10);
-        }
-        .player-body{
-            padding: 16px 16px 22px;
-        }
-        .player-name{
-            margin: 6px 0 6px;
-            font-size: 19px;
-            font-weight: 900;
-        }
-        .player-meta{
-            margin: 0 0 10px;
-            font-size: 13px;
-            color: #666;
-        }
-        .player-text{
-            margin: 0;
-            line-height: 1.75;
-            color: #333;
-            font-size: 14.5px;
-        }
-        hr{
-            width: 85%;
-            max-width: 950px;
-            margin: 30px auto;
-            border: none;
-            border-top: 1px solid #ddd;
-        }
-    </style>
 </head>
-
 <body>
 
 <header>
-    <div class="logo">
-        <a href="../index.html">유럽 5대 리그</a>
-    </div>
+    <div class="logo"><a href="../index.html">유럽 5대 리그</a></div>
     <div class="menu">☰</div>
 </header>
 
@@ -102,65 +19,46 @@
         <li><a href="../premier-league.html">Premier League</a></li>
         <li><a href="../la-liga.html">La Liga</a></li>
         <li><a href="../serie-a.html">Serie A</a></li>
-        <li><a href="../Bundesliga.html">Bundesliga</a></li>
+        <li><a href="../bundesliga.html">Bundesliga</a></li>
         <li><a href="../ligue1.html">Ligue 1</a></li>
     </ul>
 </div>
-
 <div class="overlay" id="overlay"></div>
 
 <main class="container">
-
-    <p><a href="../ligue1.html" class="back-link">← Ligue 1로 돌아가기</a></p>
+    <a href="../ligue1.html" class="back-link">← Ligue 1 목록</a>
 
     <h1>Olympique de Marseille</h1>
 
-    <p class="section-desc">
-        올랭피크 드 마르세유(마르세유)는 프랑스 남부 도시 마르세유를 연고로 하는 전통 명문 구단이다.
-        강한 홈 분위기와 빠른 템포의 경기 운영을 바탕으로 리그 앙 상위권 경쟁을 이어간다.
-    </p>
+    <div style="text-align: center; max-width: 800px; margin: 0 auto 40px; line-height: 1.6;">
+        <p>올랭피크 드 마르세유(마르세유)는 프랑스 남부 도시 마르세유를 연고로 하는 전통 명문 구단이다. 강한 홈 분위기와 빠른 템포의 경기 운영을 바탕으로 상위권 경쟁을 이어간다.</p>
+        <p>마르세유는 측면을 활용한 전개와 적극적인 압박으로 흐름을 가져오는 스타일이 특징이며, 경기 상황에 따라 빠르게 전환하며 득점 기회를 만들어낸다.</p>
+    </div>
 
-    <p class="section-desc">
-        마르세유는 측면을 활용한 전개와 적극적인 압박으로 흐름을 가져오는 스타일이 특징이며,
-        경기 상황에 따라 빠르게 전환하며 득점 기회를 만들어낸다.
-    </p>
+    <hr style="border: 0; height: 1px; background: #eee; margin: 40px 0;">
+    
+    <h2>⭐ 주요 선수 (Key Players)</h2>
 
-    <hr>
+    <section class="player-profile">
+        <figure>
+            <img src="../img/player-aubameyang.jpg" alt="피에르-에메릭 오바메양">
+            <figcaption>피에르-에메릭 오바메양</figcaption>
+        </figure>
+        <div class="player-info">
+            <p><strong>포지션:</strong> 공격수 (Forward)</p>
+            <p><strong>특징:</strong> 공간 침투와 결정력이 강점인 스트라이커로, 박스 안에서의 움직임과 마무리 능력을 통해 득점 기회를 살린다.</p>
+        </div>
+    </section>
 
-    <h2 class="section-title">⭐ 주요 선수</h2>
-
-    <section class="players">
-
-        <!-- 선수 1 -->
-        <article class="player-card">
-            <div class="player-photo-wrap">
-                <img class="player-photo" src="../img/player-aubameyang.jpg" alt="Pierre-Emerick Aubameyang">
-            </div>
-            <div class="player-body">
-                <div class="player-name">피에르-에메릭 오바메양</div>
-                <div class="player-meta">포지션: 공격수 (Forward)</div>
-                <p class="player-text">
-                    공간 침투와 결정력이 강점인 스트라이커로,
-                    박스 안에서의 움직임과 마무리 능력을 통해 득점 기회를 살린다.
-                </p>
-            </div>
-        </article>
-
-        <!-- 선수 2 -->
-        <article class="player-card">
-            <div class="player-photo-wrap">
-                <img class="player-photo" src="../img/player-clauss.jpg" alt="Jonathan Clauss">
-            </div>
-            <div class="player-body">
-                <div class="player-name">조나탕 클라우스</div>
-                <div class="player-meta">포지션: 윙백/풀백 (Wing-back)</div>
-                <p class="player-text">
-                    측면에서 활동량이 풍부하며 크로스와 오버래핑이 강점이다.
-                    공격 전개에 폭을 더하고 기회를 만들어내는 역할을 맡는다.
-                </p>
-            </div>
-        </article>
-
+    <section class="player-profile">
+        <figure>
+            <img src="../img/player-clauss.jpg" alt="조나탕 클라우스">
+            <figcaption>조나탕 클라우스 (Jonathan Clauss)</figcaption>
+        </figure>
+        <div class="player-info">
+            <p><strong>포지션:</strong> 윙백/풀백 (Wing-back)</p>
+            <p><strong>특징:</strong> 측면에서 활동량이 풍부하며 크로스와 오버래핑이 강점이다. 공격 전개에 폭을 더하고 기회를 만들어내는 역할을 맡는다.</p>
+        </div>
     </section>
 
     <div class="team-nav">
@@ -174,48 +72,15 @@
     const menuBtn = document.querySelector('.menu');
     const sidebar = document.getElementById('sidebar');
     const overlay = document.getElementById('overlay');
-
-    menuBtn.addEventListener('click', () => {
-        sidebar.classList.toggle('open');
-        overlay.classList.toggle('show');
+    menuBtn.addEventListener('click', () => { sidebar.classList.toggle('open'); overlay.classList.toggle('show'); });
+    overlay.addEventListener('click', () => { sidebar.classList.remove('open'); overlay.classList.remove('show'); });
+    window.addEventListener("DOMContentLoaded", () => { document.body.classList.add("page-ready"); });
+    document.addEventListener("click", (e) => {
+        const a = e.target.closest("a");
+        if (!a || !a.href || a.target === "_blank" || a.href.startsWith("javascript:")) return;
+        e.preventDefault(); document.body.classList.add("page-leave");
+        setTimeout(() => window.location.href = a.href, 200);
     });
-
-    overlay.addEventListener('click', () => {
-        sidebar.classList.remove('open');
-        overlay.classList.remove('show');
-    });
-
-  // 페이지 로딩되면 페이드 인
-  window.addEventListener("DOMContentLoaded", () => {
-    document.body.classList.add("page-ready");
-  });
-
-  // 내부 링크 클릭 시 페이드 아웃 후 이동
-  document.addEventListener("click", (e) => {
-    const a = e.target.closest("a");
-    if (!a) return;
-
-    const href = a.getAttribute("href");
-    if (!href) return;
-
-    // 새 탭, 외부링크, 앵커(#)는 기본 동작 유지
-    const isExternal = href.startsWith("http");
-    const isAnchor = href.startsWith("#");
-    const isNewTab = a.target === "_blank";
-    if (isExternal || isAnchor || isNewTab) return;
-
-    // 같은 페이지 내 JS 링크 예외
-    if (href.startsWith("javascript:")) return;
-
-    e.preventDefault();
-    document.body.classList.add("page-leave");
-
-    setTimeout(() => {
-      window.location.href = href;
-    }, 180);
-  });
-
 </script>
-
 </body>
 </html>

@@ -19,43 +19,29 @@
         <li><a href="../premier-league.html">Premier League</a></li>
         <li><a href="../la-liga.html">La Liga</a></li>
         <li><a href="../serie-a.html">Serie A</a></li>
-        <li><a href="../Bundesliga.html">Bundesliga</a></li>
+        <li><a href="../bundesliga.html">Bundesliga</a></li>
         <li><a href="../ligue1.html">Ligue 1</a></li>
     </ul>
 </div>
-
 <div class="overlay" id="overlay"></div>
 
 <main class="container">
-
-    <p><a href="../serie-a.html" class="back-link">← Serie A로 돌아가기</a></p>
+    <a href="../serie-a.html" class="back-link">← Serie A 목록</a>
 
     <h1>AC Milan</h1>
 
-    <p>
-        AC 밀란은 이탈리아 롬바르디아주 밀라노를 연고로 하는 프로 축구 클럽입니다.
-        구단 별명은 **'로쏘네리(Rossoneri, 빨강-검정)'**이며, 홈 구장은 같은 연고지 팀인 인터 밀란과 공유하는 **산 시로(San Siro, 주세페 메아차 스타디움)**입니다.
-    </p>
+    <div style="text-align: center; max-width: 800px; margin: 0 auto 40px; line-height: 1.6;">
+        <p>AC 밀란은 이탈리아 밀라노를 연고로 하는 명문 클럽으로, '로쏘네리(빨강-검정)'라는 별명을 가지고 있습니다.</p>
+        <p>UEFA 챔피언스리그 7회 우승이라는 대기록을 보유하고 있으며, 젊고 역동적인 선수단을 바탕으로 다시 한번 유럽 정상을 노리고 있습니다.</p>
+    </div>
 
-    <p>
-        AC 밀란은 UEFA 챔피언스리그(혹은 유러피언컵)에서 **7회 우승**을 차지한 유럽 축구의 전설적인 명문 클럽입니다.
-        2025년 현재, 젊고 역동적인 선수단을 바탕으로 기술적이고 빠른 축구를 구사하며 리그 우승과 유럽 대회에서의 영광을 되찾기 위해 노력하고 있습니다.
-        지역 라이벌인 인터 밀란과의 경기는 **'밀라노 더비(Derby della Madonnina)'**라 불립니다.
-    </p>
-
-    <h2>✨ 팀의 정체성 (2025 기준)</h2>
-    <p>
-        최근 몇 년간 젊은 선수들의 성장을 통해 팀의 체질을 개선했으며, 빠르고 공격적인 윙 플레이와 탄탄한 수비 라인을 특징으로 합니다. 
-        이러한 리빌딩을 통해 2020년대 중반 세리에 A의 주요 우승 경쟁팀으로 확고히 자리 잡았습니다.
-    </p>
+    <hr style="border: 0; height: 1px; background: #eee; margin: 40px 0;">
     
-    <hr>
-    
-    <h2>⭐ 주요 선수 (Key Players 2025)</h2>
+    <h2>⭐ 주요 선수 (Key Players)</h2>
 
     <section class="player-profile">
         <figure>
-            <img src="https://cdn.footballist.co.kr/news/photo/202305/166804_94947_2252.jpg" alt="하파엘 레앙 선수 사진" style="width:700px; height:auto; border-radius:50%;">
+            <img src="https://cdn.footballist.co.kr/news/photo/202305/166804_94947_2252.jpg" alt="하파엘 레앙">
             <figcaption>하파엘 레앙 (Rafael Leão)</figcaption>
         </figure>
         <div class="player-info">
@@ -64,11 +50,9 @@
         </div>
     </section>
     
-    <hr>
-    
     <section class="player-profile">
         <figure>
-            <img src="https://cdn.sportivomedia.net/news/photo/202109/1407_1314_531.jpg" alt="테오 에르난데스 선수 사진" style="width:700px; height:auto; border-radius:50%;">
+            <img src="https://cdn.sportivomedia.net/news/photo/202109/1407_1314_531.jpg" alt="테오 에르난데스">
             <figcaption>테오 에르난데스 (Theo Hernández)</figcaption>
         </figure>
         <div class="player-info">
@@ -77,11 +61,9 @@
         </div>
     </section>
 
-    <hr>
-    
     <section class="player-profile">
         <figure>
-            <img src="https://cdn.footballist.co.kr/news/photo/202205/148735_75316_2428.jpg" alt="마이크 메냥 선수 사진" style="width:700px; height:auto; border-radius:50%;">
+            <img src="https://cdn.footballist.co.kr/news/photo/202205/148735_75316_2428.jpg" alt="마이크 메냥">
             <figcaption>마이크 메냥 (Mike Maignan)</figcaption>
         </figure>
         <div class="player-info">
@@ -90,56 +72,26 @@
         </div>
     </section>
 
-<div class="team-nav">
-    <a href="team-inter.html">← 이전 팀</a>
-    <a href="team-napoli.html">다음 팀 →</a>
-</div>
+    <div class="team-nav">
+        <a href="team-inter.html">← 이전 팀</a>
+        <a href="team-napoli.html">다음 팀 →</a>
+    </div>
 
 </main>
 
 <script>
-const menuBtn = document.querySelector('.menu');
-const sidebar = document.getElementById('sidebar');
-const overlay = document.getElementById('overlay');
-menuBtn.addEventListener('click', ()=>{sidebar.classList.toggle('open');overlay.classList.toggle('show');});
-overlay.addEventListener('click', ()=>{sidebar.classList.remove('open');overlay.classList.remove('show');});
-
-  // 페이지 로딩되면 페이드 인
-  window.addEventListener("DOMContentLoaded", () => {
-    document.body.classList.add("page-ready");
-  });
-
-  // 내부 링크 클릭 시 페이드 아웃 후 이동
-  document.addEventListener("click", (e) => {
-    const a = e.target.closest("a");
-    if (!a) return;
-
-    const href = a.getAttribute("href");
-    if (!href) return;
-
-    // 새 탭, 외부링크, 앵커(#)는 기본 동작 유지
-    const isExternal = href.startsWith("http");
-    const isAnchor = href.startsWith("#");
-    const isNewTab = a.target === "_blank";
-    if (isExternal || isAnchor || isNewTab) return;
-
-    // 같은 페이지 내 JS 링크 예외
-    if (href.startsWith("javascript:")) return;
-
-    e.preventDefault();
-    document.body.classList.add("page-leave");
-
-    setTimeout(() => {
-      window.location.href = href;
-    }, 180);
-  });
-  
+    const menuBtn = document.querySelector('.menu');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+    menuBtn.addEventListener('click', () => { sidebar.classList.toggle('open'); overlay.classList.toggle('show'); });
+    overlay.addEventListener('click', () => { sidebar.classList.remove('open'); overlay.classList.remove('show'); });
+    window.addEventListener("DOMContentLoaded", () => { document.body.classList.add("page-ready"); });
+    document.addEventListener("click", (e) => {
+        const a = e.target.closest("a");
+        if (!a || !a.href || a.target === "_blank" || a.href.startsWith("javascript:")) return;
+        e.preventDefault(); document.body.classList.add("page-leave");
+        setTimeout(() => window.location.href = a.href, 200);
+    });
 </script>
-
 </body>
 </html>
-
-
-
-
-

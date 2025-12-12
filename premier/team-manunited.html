@@ -8,9 +8,7 @@
 <body>
 
 <header>
-    <div class="logo">
-        <a href="../index.html">유럽 5대 리그</a>
-    </div>
+    <div class="logo"><a href="../index.html">유럽 5대 리그</a></div>
     <div class="menu">☰</div>
 </header>
 
@@ -21,46 +19,29 @@
         <li><a href="../premier-league.html">Premier League</a></li>
         <li><a href="../la-liga.html">La Liga</a></li>
         <li><a href="../serie-a.html">Serie A</a></li>
-        <li><a href="../Bundesliga.html">Bundesliga</a></li>
+        <li><a href="../bundesliga.html">Bundesliga</a></li>
         <li><a href="../ligue1.html">Ligue 1</a></li>
     </ul>
 </div>
-
 <div class="overlay" id="overlay"></div>
 
 <main class="container">
-
-    <p>
-        <a href="../premier-league.html" class="back-link">← Premier League로 돌아가기</a>
-    </p>
+    <a href="../premier-league.html" class="back-link">← Premier League 목록</a>
 
     <h1>Manchester United</h1>
 
-    <p>
-        맨체스터 유나이티드는 잉글랜드 그레이터 맨체스터주 트래퍼드를 연고로 하는 프로 축구 클럽입니다.
-        잉글랜드 축구 역사상 가장 많은 우승 기록을 보유한 클럽 중 하나이며,
-        전 세계적으로 가장 인기 있는 축구 클럽으로 손꼽힙니다.
-    </p>
+    <div style="text-align: center; max-width: 800px; margin: 0 auto 40px; line-height: 1.6;">
+        <p>맨체스터 유나이티드는 잉글랜드 축구 역사상 가장 많은 우승 기록을 보유한 클럽 중 하나이며, 전 세계적으로 가장 인기 있는 축구 클럽으로 손꼽힙니다.</p>
+        <p>구단 별명은 **'붉은 악마(The Red Devils)'**이며, 홈 구장은 **올드 트래퍼드(Old Trafford)**입니다.</p>
+    </div>
 
-    <p>
-        구단 별명은 **'붉은 악마(The Red Devils)'**이며, 홈 구장은 축구의 성지로 불리는 **올드 트래퍼드(Old Trafford)**입니다.
-        지역 라이벌인 맨체스터 시티와의 경기는 **'맨체스터 더비'**로 불리며 치열한 경쟁을 이어가고 있습니다.
-    </p>
-    
-    <h2>🏆 구단 역사 및 황금기</h2>
-    <p>
-        맨유의 역사는 **알렉스 퍼거슨** 경이 감독을 맡았던 1986년부터 2013년까지의 기간이 압도적인 황금기로 기록됩니다. 
-        이 기간 동안 프리미어리그 13회 우승, UEFA 챔피언스리그 2회 우승 등 수많은 트로피를 들어 올렸으며, 
-        1998-99 시즌에는 잉글랜드 클럽 최초로 **트레블(Treble)**을 달성하는 위업을 이루었습니다. 
-    </p>
-    
-    <hr>
+    <hr style="border: 0; height: 1px; background: #eee; margin: 40px 0;">
     
     <h2>⭐ 주요 선수 (Key Players)</h2>
 
     <section class="player-profile">
         <figure>
-            <img src="https://cdn.thankyounews.co.kr/news/photo/202406/306426_305858_1543.jpg" alt="브루노 페르난데스 선수 사진" style="width:700px; height:auto; border-radius:50%;">
+            <img src="https://cdn.thankyounews.co.kr/news/photo/202406/306426_305858_1543.jpg" alt="브루노 페르난데스">
             <figcaption>브루노 페르난데스 (Bruno Fernandes)</figcaption>
         </figure>
         <div class="player-info">
@@ -69,12 +50,9 @@
         </div>
     </section>
     
-    <hr>
- 
-    
     <section class="player-profile">
         <figure>
-            <img src="../img/casemiro.jpg" alt="카세미루 선수 사진" style="width:700px; height:auto; border-radius:50%;">
+            <img src="../img/casemiro.jpg" alt="카세미루">
             <figcaption>카세미루 (Casemiro)</figcaption>
         </figure>
         <div class="player-info">
@@ -83,11 +61,10 @@
         </div>
     </section>
 
-<div class="team-nav">
-    <a href="team-mancity.html">← 이전 팀</a>
-    <a href="team-chelsea.html">다음 팀 →</a>
-</div>
-
+    <div class="team-nav">
+        <a href="team-mancity.html">← 이전 팀</a>
+        <a href="team-chelsea.html">다음 팀 →</a>
+    </div>
 
 </main>
 
@@ -95,49 +72,15 @@
     const menuBtn = document.querySelector('.menu');
     const sidebar = document.getElementById('sidebar');
     const overlay = document.getElementById('overlay');
-
-    menuBtn.addEventListener('click', () => {
-        sidebar.classList.toggle('open');
-        overlay.classList.toggle('show');
+    menuBtn.addEventListener('click', () => { sidebar.classList.toggle('open'); overlay.classList.toggle('show'); });
+    overlay.addEventListener('click', () => { sidebar.classList.remove('open'); overlay.classList.remove('show'); });
+    window.addEventListener("DOMContentLoaded", () => { document.body.classList.add("page-ready"); });
+    document.addEventListener("click", (e) => {
+        const a = e.target.closest("a");
+        if (!a || !a.href || a.target === "_blank" || a.href.startsWith("javascript:")) return;
+        e.preventDefault(); document.body.classList.add("page-leave");
+        setTimeout(() => window.location.href = a.href, 200);
     });
-
-    overlay.addEventListener('click', () => {
-        sidebar.classList.remove('open');
-        overlay.classList.remove('show');
-    });
-  // 페이지 로딩되면 페이드 인
-  window.addEventListener("DOMContentLoaded", () => {
-    document.body.classList.add("page-ready");
-  });
-
-  // 내부 링크 클릭 시 페이드 아웃 후 이동
-  document.addEventListener("click", (e) => {
-    const a = e.target.closest("a");
-    if (!a) return;
-
-    const href = a.getAttribute("href");
-    if (!href) return;
-
-    // 새 탭, 외부링크, 앵커(#)는 기본 동작 유지
-    const isExternal = href.startsWith("http");
-    const isAnchor = href.startsWith("#");
-    const isNewTab = a.target === "_blank";
-    if (isExternal || isAnchor || isNewTab) return;
-
-    // 같은 페이지 내 JS 링크 예외
-    if (href.startsWith("javascript:")) return;
-
-    e.preventDefault();
-    document.body.classList.add("page-leave");
-
-    setTimeout(() => {
-      window.location.href = href;
-    }, 180);
-  });
-
 </script>
-
 </body>
 </html>
-
-

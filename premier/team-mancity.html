@@ -8,9 +8,7 @@
 <body>
 
 <header>
-    <div class="logo">
-        <a href="../index.html">유럽 5대 리그</a>
-    </div>
+    <div class="logo"><a href="../index.html">유럽 5대 리그</a></div>
     <div class="menu">☰</div>
 </header>
 
@@ -21,35 +19,29 @@
         <li><a href="../premier-league.html">Premier League</a></li>
         <li><a href="../la-liga.html">La Liga</a></li>
         <li><a href="../serie-a.html">Serie A</a></li>
-        <li><a href="../Bundesliga.html">Bundesliga</a></li>
+        <li><a href="../bundesliga.html">Bundesliga</a></li>
         <li><a href="../ligue1.html">Ligue 1</a></li>
     </ul>
 </div>
-
 <div class="overlay" id="overlay"></div>
 
 <main class="container">
-
-    <p>
-        <a href="../premier-league.html" class="back-link">← Premier League로 돌아가기</a>
-    </p>
+    <a href="../premier-league.html" class="back-link">← Premier League 목록</a>
 
     <h1>Manchester City</h1>
 
-    <p>
-        맨체스터 시티는 잉글랜드 맨체스터를 연고로 하는 프로 축구 클럽으로,
-        최근 프리미어리그에서 여러 차례 우승을 차지한 최강 팀 중 하나입니다.
-    </p>
+    <div style="text-align: center; max-width: 800px; margin: 0 auto 40px; line-height: 1.6;">
+        <p>맨체스터 시티는 잉글랜드 맨체스터를 연고로 하는 프로 축구 클럽으로, 최근 프리미어리그에서 여러 차례 우승을 차지한 최강 팀 중 하나입니다.</p>
+        <p>강한 공격력과 조직적인 패스를 바탕으로 한 현대적인 축구를 보여주며, UEFA 챔피언스리그에서도 꾸준히 상위 라운드에 진출하고 있습니다.</p>
+    </div>
 
-    <p>
-        강한 공격력과 조직적인 패스를 바탕으로 한 현대적인 축구를 보여주며,
-        UEFA 챔피언스리그에서도 꾸준히 상위 라운드에 진출하고 있습니다.
-    </p>
-<h2>⭐ 주요 선수 (Key Players)</h2>
+    <hr style="border: 0; height: 1px; background: #eee; margin: 40px 0;">
+    
+    <h2>⭐ 주요 선수 (Key Players)</h2>
 
     <section class="player-profile">
         <figure>
-            <img src="https://flexible.img.hani.co.kr/flexible/normal/800/514/imgdb/original/2022/0907/20220907502393.jpg" alt="엘링 홀란 선수 사진" style="width:700px; height:auto; border-radius:50%;">
+            <img src="https://flexible.img.hani.co.kr/flexible/normal/800/514/imgdb/original/2022/0907/20220907502393.jpg" alt="엘링 홀란">
             <figcaption>엘링 홀란 (Erling Haaland)</figcaption>
         </figure>
         <div class="player-info">
@@ -58,11 +50,9 @@
         </div>
     </section>
 
-    <hr>
-    
     <section class="player-profile">
         <figure>
-            <img src="https://file2.nocutnews.co.kr/newsroom/image/2023/06/11/202306110550566427_0.jpg" alt="로드리 선수 사진" style="width:700px; height:auto; border-radius:50%;">
+            <img src="https://file2.nocutnews.co.kr/newsroom/image/2023/06/11/202306110550566427_0.jpg" alt="로드리">
             <figcaption>로드리 (Rodri)</figcaption>
         </figure>
         <div class="player-info">
@@ -71,62 +61,26 @@
         </div>
     </section>
 
-<div class="team-nav">
-    <a href="team-tottenham.html">← 이전 팀</a>
-    <a href="team-manunited.html">다음 팀 →</a>
-</div>
+    <div class="team-nav">
+        <a href="team-tottenham.html">← 이전 팀</a>
+        <a href="team-manunited.html">다음 팀 →</a>
+    </div>
 
-    
 </main>
 
 <script>
     const menuBtn = document.querySelector('.menu');
     const sidebar = document.getElementById('sidebar');
     const overlay = document.getElementById('overlay');
-
-    menuBtn.addEventListener('click', () => {
-        sidebar.classList.toggle('open');
-        overlay.classList.toggle('show');
+    menuBtn.addEventListener('click', () => { sidebar.classList.toggle('open'); overlay.classList.toggle('show'); });
+    overlay.addEventListener('click', () => { sidebar.classList.remove('open'); overlay.classList.remove('show'); });
+    window.addEventListener("DOMContentLoaded", () => { document.body.classList.add("page-ready"); });
+    document.addEventListener("click", (e) => {
+        const a = e.target.closest("a");
+        if (!a || !a.href || a.target === "_blank" || a.href.startsWith("javascript:")) return;
+        e.preventDefault(); document.body.classList.add("page-leave");
+        setTimeout(() => window.location.href = a.href, 200);
     });
-
-    overlay.addEventListener('click', () => {
-        sidebar.classList.remove('open');
-        overlay.classList.remove('show');
-    });
-
-  // 페이지 로딩되면 페이드 인
-  window.addEventListener("DOMContentLoaded", () => {
-    document.body.classList.add("page-ready");
-  });
-
-  // 내부 링크 클릭 시 페이드 아웃 후 이동
-  document.addEventListener("click", (e) => {
-    const a = e.target.closest("a");
-    if (!a) return;
-
-    const href = a.getAttribute("href");
-    if (!href) return;
-
-    // 새 탭, 외부링크, 앵커(#)는 기본 동작 유지
-    const isExternal = href.startsWith("http");
-    const isAnchor = href.startsWith("#");
-    const isNewTab = a.target === "_blank";
-    if (isExternal || isAnchor || isNewTab) return;
-
-    // 같은 페이지 내 JS 링크 예외
-    if (href.startsWith("javascript:")) return;
-
-    e.preventDefault();
-    document.body.classList.add("page-leave");
-
-    setTimeout(() => {
-      window.location.href = href;
-    }, 180);
-  });
-
 </script>
-
 </body>
 </html>
-
-

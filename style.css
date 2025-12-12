@@ -145,3 +145,25 @@ header {
   .hero-content h1 { font-size: 32px; }
   .card-container { grid-template-columns: 1fr; }
 }
+
+/* =========================
+   [긴급 수정] 제목 가운데 정렬
+   - 팀 이름과 소제목이 왼쪽으로 쏠리는 문제 해결
+========================= */
+h1, h2 {
+  text-align: center !important; /* 무조건 가운데로! */
+  letter-spacing: -0.5px;        /* 글자 간격 살짝 좁혀서 세련되게 */
+  word-break: keep-all;          /* 단어 중간에 줄바꿈 되지 않게 */
+}
+
+/* 팀 이름(h1) 위아래 여백 */
+.container h1 {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+/* 소제목(h2) 위아래 여백 */
+.container h2 {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}

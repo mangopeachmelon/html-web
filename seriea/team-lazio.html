@@ -15,48 +15,33 @@
 <div class="sidebar" id="sidebar">
     <h3>카테고리</h3>
     <ul>
-        <li><a href="../.html">홈</a></li>
+        <li><a href="../index.html">홈</a></li>
         <li><a href="../premier-league.html">Premier League</a></li>
         <li><a href="../la-liga.html">La Liga</a></li>
         <li><a href="../serie-a.html">Serie A</a></li>
-        <li><a href="../Bundesliga.html">Bundesliga</a></li>
+        <li><a href="../bundesliga.html">Bundesliga</a></li>
         <li><a href="../ligue1.html">Ligue 1</a></li>
     </ul>
 </div>
-
 <div class="overlay" id="overlay"></div>
 
 <main class="container">
+    <a href="../serie-a.html" class="back-link">← Serie A 목록</a>
 
-    <p><a href="../serie-a.html" class="back-link">← Serie A로 돌아가기</a></p>
+    <h1>SS Lazio</h1>
 
-    <h1>Lazio</h1>
+    <div style="text-align: center; max-width: 800px; margin: 0 auto 40px; line-height: 1.6;">
+        <p>SS 라치오는 로마를 연고로 하는 구단으로, 전통적으로 강력한 미드필드와 조직적인 수비 라인을 기반으로 경기를 풀어갑니다.</p>
+        <p>2025년 현재, 라치오는 견고한 수비 조직력과 효율적인 역습 전술을 바탕으로 세리에 A 상위권 경쟁을 이어가고 있습니다.</p>
+    </div>
 
-   <p>
-        SS 라치오는 이탈리아 로마를 연고로 하는 프로 축구 클럽입니다.
-        구단 별명은 **'비안코첼레스티(Biancocelesti, 하양-하늘색)'**이며, 
-        홈 구장은 같은 연고지 팀인 AS 로마와 공유하는 **스타디오 올림피코(Stadio Olimpico)**입니다.
-    </p>
-
-    <p>
-        라치오는 세리에 A 우승(스쿠데토)과 코파 이탈리아 우승 등 오랜 역사를 자랑하는 명문 클럽입니다.
-        2025년 현재, 라치오는 견고한 수비 조직력과 효율적인 역습 전술을 바탕으로 세리에 A 상위권 경쟁을 이어가고 있습니다.
-        지역 라이벌인 AS 로마와의 경기는 **'로마 더비(Derby della Capitale)'**로 불리며 가장 격렬하고 열정적인 더비로 유명합니다.
-    </p>
-
-    <h2>🦅 팀의 전술적 특징 (2025 기준)</h2>
-    <p>
-        라치오는 전통적으로 강력한 미드필드와 조직적인 수비 라인을 기반으로 경기를 풀어갑니다. 
-        개개인의 뛰어난 기술보다는 전술적인 움직임을 중시하는 팀입니다.
-    </p>
-
-    <hr>
-
-    <h2>⭐ 주요 선수 (Key Players 2025)</h2>
+    <hr style="border: 0; height: 1px; background: #eee; margin: 40px 0;">
+    
+    <h2>⭐ 주요 선수 (Key Players)</h2>
 
     <section class="player-profile">
         <figure>
-            <img src="https://nimage.g-enews.com/phpwas/restmb_allidxmake.php?idx=5&simg=20200831234530082529ecba8d8b8617764132.jpg" alt="치로 임모빌레 선수 사진" style="width:700px; height:auto; border-radius:50%;">
+            <img src="https://nimage.g-enews.com/phpwas/restmb_allidxmake.php?idx=5&simg=20200831234530082529ecba8d8b8617764132.jpg" alt="치로 임모빌레">
             <figcaption>치로 임모빌레 (Ciro Immobile)</figcaption>
         </figure>
         <div class="player-info">
@@ -65,11 +50,9 @@
         </div>
     </section>
 
-    <hr>
-
     <section class="player-profile">
         <figure>
-            <img src="../img/Luis Alberto.jpg" alt="루이스 알베르토 선수 사진" style="width:700px; height:auto; border-radius:50%;">
+            <img src="../img/Luis Alberto.jpg" alt="루이스 알베르토">
             <figcaption>루이스 알베르토 (Luis Alberto)</figcaption>
         </figure>
         <div class="player-info">
@@ -78,55 +61,26 @@
         </div>
     </section>
 
-<div class="team-nav">
-    <a href="team-roma.html">← 이전 팀</a>
-    <a href="team-Juventus.html">다음 팀 →</a>
-</div>
+    <div class="team-nav">
+        <a href="team-roma.html">← 이전 팀</a>
+        <a href="team-Juventus.html">다음 팀 →</a>
+    </div>
 
 </main>
 
 <script>
-const menuBtn = document.querySelector('.menu');
-const sidebar = document.getElementById('sidebar');
-const overlay = document.getElementById('overlay');
-menuBtn.addEventListener('click', ()=>{sidebar.classList.toggle('open');overlay.classList.toggle('show');});
-overlay.addEventListener('click', ()=>{sidebar.classList.remove('open');overlay.classList.remove('show');});
-  // 페이지 로딩되면 페이드 인
-  window.addEventListener("DOMContentLoaded", () => {
-    document.body.classList.add("page-ready");
-  });
-
-  // 내부 링크 클릭 시 페이드 아웃 후 이동
-  document.addEventListener("click", (e) => {
-    const a = e.target.closest("a");
-    if (!a) return;
-
-    const href = a.getAttribute("href");
-    if (!href) return;
-
-    // 새 탭, 외부링크, 앵커(#)는 기본 동작 유지
-    const isExternal = href.startsWith("http");
-    const isAnchor = href.startsWith("#");
-    const isNewTab = a.target === "_blank";
-    if (isExternal || isAnchor || isNewTab) return;
-
-    // 같은 페이지 내 JS 링크 예외
-    if (href.startsWith("javascript:")) return;
-
-    e.preventDefault();
-    document.body.classList.add("page-leave");
-
-    setTimeout(() => {
-      window.location.href = href;
-    }, 180);
-  });
-
+    const menuBtn = document.querySelector('.menu');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+    menuBtn.addEventListener('click', () => { sidebar.classList.toggle('open'); overlay.classList.toggle('show'); });
+    overlay.addEventListener('click', () => { sidebar.classList.remove('open'); overlay.classList.remove('show'); });
+    window.addEventListener("DOMContentLoaded", () => { document.body.classList.add("page-ready"); });
+    document.addEventListener("click", (e) => {
+        const a = e.target.closest("a");
+        if (!a || !a.href || a.target === "_blank" || a.href.startsWith("javascript:")) return;
+        e.preventDefault(); document.body.classList.add("page-leave");
+        setTimeout(() => window.location.href = a.href, 200);
+    });
 </script>
-
 </body>
 </html>
-
-
-
-
-
