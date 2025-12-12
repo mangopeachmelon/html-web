@@ -2,9 +2,90 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lille OSC</title>
     <link rel="stylesheet" href="../style.css">
+
+    <style>
+        .section-title{
+            margin: 40px 0 14px;
+            font-size: 22px;
+            font-weight: 800;
+            text-align: center;
+        }
+        .section-desc{
+            max-width: 900px;
+            margin: 0 auto 18px;
+            line-height: 1.8;
+            color: #444;
+            text-align: center;
+        }
+        .players{
+            display: grid;
+            grid-template-columns: repeat(2, minmax(260px, 1fr));
+            gap: 28px;
+            max-width: 1000px;
+            margin: 24px auto 0;
+            padding: 0 10px 10px;
+            justify-content: center;
+        }
+        @media (max-width: 900px){
+            .players{ grid-template-columns: 1fr; }
+        }
+        .player-card{
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+            overflow: hidden;
+            text-align: center;
+        }
+        .player-photo-wrap{
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px;
+            background: #f7f7f7;
+        }
+        .player-photo{
+            width: 90%;
+            max-width: 520px;
+            height: 180px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 999px;
+            display: block;
+            box-shadow: 0 10px 18px rgba(0,0,0,0.10);
+        }
+        .player-body{
+            padding: 16px 16px 22px;
+        }
+        .player-name{
+            margin: 6px 0 6px;
+            font-size: 19px;
+            font-weight: 900;
+        }
+        .player-meta{
+            margin: 0 0 10px;
+            font-size: 13px;
+            color: #666;
+        }
+        .player-text{
+            margin: 0;
+            line-height: 1.75;
+            color: #333;
+            font-size: 14.5px;
+        }
+        hr{
+            width: 85%;
+            max-width: 950px;
+            margin: 30px auto;
+            border: none;
+            border-top: 1px solid #ddd;
+        }
+    </style>
 </head>
+
 <body>
 
 <header>
@@ -30,28 +111,62 @@
 
 <main class="container">
 
-    <p>
-        <a href="../ligue1.html" class="back-link">
-            ← Ligue 1로 돌아가기
-        </a>
-    </p>
+    <p><a href="../ligue1.html" class="back-link">← Ligue 1로 돌아가기</a></p>
 
     <h1>Lille OSC</h1>
 
-    <p>
-        릴 OSC는 프랑스 북부 릴을 연고로 하는 클럽으로,
-        리그 앙에서 여러 차례 우승을 차지한 경험이 있는 팀입니다.
+    <p class="section-desc">
+        릴 OSC는 프랑스 북부 도시 릴을 연고로 하는 전통 있는 클럽으로,
+        젊고 조직적인 전력을 바탕으로 리그 앙 상위권 경쟁을 이어가고 있다.
     </p>
 
-    <p>
-        탄탄한 조직력과 짜임새 있는 전술을 바탕으로,
-        젊은 선수들과 베테랑 선수들이 조화를 이루며 꾸준한 성적을 내고 있습니다.
+    <p class="section-desc">
+        빠른 전환과 압박을 중시하는 전술을 통해 강팀을 상대로도
+        안정적인 경기 운영을 보여주는 것이 특징이다.
     </p>
 
-<div class="team-nav">
-    <a href="team-monaco.html">← 이전 팀</a>
-    <a href="team-nice.html">다음 팀 →</a>
-</div>
+    <hr>
+
+    <h2 class="section-title">⭐ 주요 선수</h2>
+
+    <section class="players">
+
+        <!-- 선수 1 -->
+        <article class="player-card">
+            <div class="player-photo-wrap">
+                <img class="player-photo" src="../img/player-david.jpg" alt="Jonathan David">
+            </div>
+            <div class="player-body">
+                <div class="player-name">조너선 데이비드</div>
+                <div class="player-meta">포지션: 공격수 (Forward)</div>
+                <p class="player-text">
+                    빠른 침투와 골 결정력이 뛰어난 공격수로,
+                    릴 공격의 중심에서 꾸준한 득점을 책임지고 있다.
+                </p>
+            </div>
+        </article>
+
+        <!-- 선수 2 -->
+        <article class="player-card">
+            <div class="player-photo-wrap">
+                <img class="player-photo" src="../img/player-andre.jpg" alt="Benjamin André">
+            </div>
+            <div class="player-body">
+                <div class="player-name">벤자민 안드레</div>
+                <div class="player-meta">포지션: 미드필더 (Midfielder)</div>
+                <p class="player-text">
+                    중원에서 수비와 전개를 동시에 담당하는 핵심 자원으로,
+                    활동량과 경기 조율 능력이 뛰어나다.
+                </p>
+            </div>
+        </article>
+
+    </section>
+
+    <div class="team-nav">
+        <a href="team-marseille.html">← 이전 팀</a>
+        <a href="team-monaco.html">다음 팀 →</a>
+    </div>
 
 </main>
 
