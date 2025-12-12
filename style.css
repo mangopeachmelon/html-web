@@ -330,3 +330,19 @@ header .menu {
     object-fit: contain;
     display: block;
 }
+
+
+.card-logo {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+}
+
+.card-logo img {
+    max-width: 75%;
+    max-height: 75%;
+    object-fit: contain;
+}
