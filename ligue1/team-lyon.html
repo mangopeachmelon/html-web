@@ -1,11 +1,91 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Olympique Lyonnais</title>
     <link rel="stylesheet" href="../style.css">
+
+    <style>
+        .section-title{
+            margin: 40px 0 14px;
+            font-size: 22px;
+            font-weight: 800;
+            text-align: center;
+        }
+        .section-desc{
+            max-width: 900px;
+            margin: 0 auto 18px;
+            line-height: 1.8;
+            color: #444;
+            text-align: center;
+        }
+        .players{
+            display: grid;
+            grid-template-columns: repeat(2, minmax(260px, 1fr));
+            gap: 28px;
+            max-width: 1000px;
+            margin: 24px auto 0;
+            padding: 0 10px 10px;
+            justify-content: center;
+        }
+        @media (max-width: 900px){
+            .players{ grid-template-columns: 1fr; }
+        }
+        .player-card{
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+            overflow: hidden;
+            text-align: center;
+        }
+        .player-photo-wrap{
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px;
+            background: #f7f7f7;
+        }
+        .player-photo{
+            width: 90%;
+            max-width: 520px;
+            height: 180px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 999px;
+            display: block;
+            box-shadow: 0 10px 18px rgba(0,0,0,0.10);
+        }
+        .player-body{
+            padding: 16px 16px 22px;
+        }
+        .player-name{
+            margin: 6px 0 6px;
+            font-size: 19px;
+            font-weight: 900;
+        }
+        .player-meta{
+            margin: 0 0 10px;
+            font-size: 13px;
+            color: #666;
+        }
+        .player-text{
+            margin: 0;
+            line-height: 1.75;
+            color: #333;
+            font-size: 14.5px;
+        }
+        hr{
+            width: 85%;
+            max-width: 950px;
+            margin: 30px auto;
+            border: none;
+            border-top: 1px solid #ddd;
+        }
+    </style>
 </head>
+
 <body>
 
 <header>
@@ -35,18 +115,58 @@
 
     <h1>Olympique Lyonnais</h1>
 
-    <p>
-        파리 생제르맹은 프랑스 파리를 연고로 하는 클럽으로,
-        리그 앙에서 계속해서 우승을 노리는 최강 팀입니다.
-    </p>
-    <p>
-        세계적인 스타 선수들이 활약하며, 챔피언스리그에서도 꾸준히 우승 후보로 거론됩니다.
+    <p class="section-desc">
+        올랭피크 리옹(리옹)은 프랑스 축구를 대표하는 명문 구단 중 하나로,
+        기술적인 패스 전개와 젊은 자원의 성장으로 강점을 만들어가는 팀이다.
     </p>
 
-<div class="team-nav">
-    <a href="team-marseille.html">← 이전 팀</a>
-    <a href="team-monaco.html">다음 팀 →</a>
-</div>
+    <p class="section-desc">
+        최근 리옹은 경기 흐름을 빠르게 바꾸는 공격 전개와,
+        중원에서의 전진 패스를 통해 득점 기회를 만들어내는 스타일을 보인다.
+    </p>
+
+    <hr>
+
+    <h2 class="section-title">⭐ 주요 선수</h2>
+
+    <section class="players">
+
+        <!-- 선수 1 -->
+        <article class="player-card">
+            <div class="player-photo-wrap">
+                <img class="player-photo" src="../img/player-cherki.jpg" alt="Rayan Cherki">
+            </div>
+            <div class="player-body">
+                <div class="player-name">라얀 셰르키</div>
+                <div class="player-meta">포지션: 공격형 미드필더/윙 (Attacking Midfielder)</div>
+                <p class="player-text">
+                    창의적인 패스와 드리블로 공격의 흐름을 만드는 플레이메이커다.
+                    좁은 공간에서도 기회를 만들어내며, 전개와 찬스 메이킹에서 핵심 역할을 맡는다.
+                </p>
+            </div>
+        </article>
+
+        <!-- 선수 2 -->
+        <article class="player-card">
+            <div class="player-photo-wrap">
+                <img class="player-photo" src="../img/player-mikautadze.jpg" alt="Georges Mikautadze">
+            </div>
+            <div class="player-body">
+                <div class="player-name">조르주 미카우타제</div>
+                <div class="player-meta">포지션: 공격수 (Forward)</div>
+                <p class="player-text">
+                    박스 안에서의 움직임과 마무리 능력이 강점인 공격수다.
+                    침투 타이밍이 좋고, 득점 상황에서 안정적인 결정력을 보여준다.
+                </p>
+            </div>
+        </article>
+
+    </section>
+
+    <div class="team-nav">
+        <a href="team-monaco.html">← 이전 팀</a>
+        <a href="team-nice.html">다음 팀 →</a>
+    </div>
 
 </main>
 

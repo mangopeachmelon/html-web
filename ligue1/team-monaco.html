@@ -1,11 +1,91 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AS Monaco</title>
     <link rel="stylesheet" href="../style.css">
+
+    <style>
+        .section-title{
+            margin: 40px 0 14px;
+            font-size: 22px;
+            font-weight: 800;
+            text-align: center;
+        }
+        .section-desc{
+            max-width: 900px;
+            margin: 0 auto 18px;
+            line-height: 1.8;
+            color: #444;
+            text-align: center;
+        }
+        .players{
+            display: grid;
+            grid-template-columns: repeat(2, minmax(260px, 1fr));
+            gap: 28px;
+            max-width: 1000px;
+            margin: 24px auto 0;
+            padding: 0 10px 10px;
+            justify-content: center;
+        }
+        @media (max-width: 900px){
+            .players{ grid-template-columns: 1fr; }
+        }
+        .player-card{
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+            overflow: hidden;
+            text-align: center;
+        }
+        .player-photo-wrap{
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px;
+            background: #f7f7f7;
+        }
+        .player-photo{
+            width: 90%;
+            max-width: 520px;
+            height: 180px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 999px;
+            display: block;
+            box-shadow: 0 10px 18px rgba(0,0,0,0.10);
+        }
+        .player-body{
+            padding: 16px 16px 22px;
+        }
+        .player-name{
+            margin: 6px 0 6px;
+            font-size: 19px;
+            font-weight: 900;
+        }
+        .player-meta{
+            margin: 0 0 10px;
+            font-size: 13px;
+            color: #666;
+        }
+        .player-text{
+            margin: 0;
+            line-height: 1.75;
+            color: #333;
+            font-size: 14.5px;
+        }
+        hr{
+            width: 85%;
+            max-width: 950px;
+            margin: 30px auto;
+            border: none;
+            border-top: 1px solid #ddd;
+        }
+    </style>
 </head>
+
 <body>
 
 <header>
@@ -35,18 +115,58 @@
 
     <h1>AS Monaco</h1>
 
-    <p>
-        파리 생제르맹은 프랑스 파리를 연고로 하는 클럽으로,
-        리그 앙에서 계속해서 우승을 노리는 최강 팀입니다.
-    </p>
-    <p>
-        세계적인 스타 선수들이 활약하며, 챔피언스리그에서도 꾸준히 우승 후보로 거론됩니다.
+    <p class="section-desc">
+        AS 모나코는 모나코 공국을 연고로 하는 리그 앙의 강호로,
+        젊은 선수 육성과 공격적인 전술 운영으로 잘 알려진 팀이다.
     </p>
 
-<div class="team-nav">
-    <a href="team-lyon.html">← 이전 팀</a>
-    <a href="team-lille.html">다음 팀 →</a>
-</div>
+    <p class="section-desc">
+        빠른 공격 전개와 전환 속도를 바탕으로 경기를 주도하며,
+        유럽 대항전 경험을 갖춘 경쟁력 있는 스쿼드를 보유하고 있다.
+    </p>
+
+    <hr>
+
+    <h2 class="section-title">⭐ 주요 선수</h2>
+
+    <section class="players">
+
+        <!-- 선수 1 -->
+        <article class="player-card">
+            <div class="player-photo-wrap">
+                <img class="player-photo" src="../img/player-ben-yedder.jpg" alt="Wissam Ben Yedder">
+            </div>
+            <div class="player-body">
+                <div class="player-name">위삼 벤 예데르</div>
+                <div class="player-meta">포지션: 공격수 (Forward)</div>
+                <p class="player-text">
+                    뛰어난 위치 선정과 골 결정력을 갖춘 스트라이커로,
+                    박스 안에서의 마무리 능력이 팀 공격의 핵심이다.
+                </p>
+            </div>
+        </article>
+
+        <!-- 선수 2 -->
+        <article class="player-card">
+            <div class="player-photo-wrap">
+                <img class="player-photo" src="../img/player-fofana.jpg" alt="Youssouf Fofana">
+            </div>
+            <div class="player-body">
+                <div class="player-name">유수프 포파나</div>
+                <div class="player-meta">포지션: 미드필더 (Midfielder)</div>
+                <p class="player-text">
+                    중원에서 왕성한 활동량과 볼 운반 능력을 바탕으로
+                    공수 연결고리 역할을 수행하는 핵심 미드필더다.
+                </p>
+            </div>
+        </article>
+
+    </section>
+
+    <div class="team-nav">
+        <a href="team-lille.html">← 이전 팀</a>
+        <a href="team-lyon.html">다음 팀 →</a>
+    </div>
 
 </main>
 
