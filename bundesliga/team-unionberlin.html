@@ -89,6 +89,37 @@
         sidebar.classList.remove('open');
         overlay.classList.remove('show');
     });
+
+  // 페이지 로딩되면 페이드 인
+  window.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("page-ready");
+  });
+
+  // 내부 링크 클릭 시 페이드 아웃 후 이동
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest("a");
+    if (!a) return;
+
+    const href = a.getAttribute("href");
+    if (!href) return;
+
+    // 새 탭, 외부링크, 앵커(#)는 기본 동작 유지
+    const isExternal = href.startsWith("http");
+    const isAnchor = href.startsWith("#");
+    const isNewTab = a.target === "_blank";
+    if (isExternal || isAnchor || isNewTab) return;
+
+    // 같은 페이지 내 JS 링크 예외
+    if (href.startsWith("javascript:")) return;
+
+    e.preventDefault();
+    document.body.classList.add("page-leave");
+
+    setTimeout(() => {
+      window.location.href = href;
+    }, 180);
+  });
+
 </script>
 
 </body>
