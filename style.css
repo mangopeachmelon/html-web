@@ -150,14 +150,36 @@ header {
   opacity: 0.95;
 }
 
-.hero-content .btn {
+/* =========================
+   Hero 버튼 (리그 보러가기) 스타일 수정
+========================= */
+.hero-btn {
   display: inline-block;
-  padding: 12px 18px;
-  border-radius: 999px;
-  background: #fff;
-  color: #111;
-  font-weight: 700;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+  margin-top: 15px;             /* 설명글과 간격 벌리기 */
+  padding: 16px 32px;           /* 버튼을 큼직하게 */
+  
+  background-color: #2563eb;    /* 눈에 띄는 쨍한 파란색 (포인트 컬러) */
+  color: #fff;                  /* 글자색 흰색 */
+  
+  font-size: 18px;              /* 글자 크기 키움 */
+  font-weight: 800;             /* 글자 굵게 */
+  border-radius: 50px;          /* 둥근 알약 모양 */
+  
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4); /* 은은한 파란 그림자 */
+  transition: all 0.3s ease;    /* 애니메이션 부드럽게 */
+}
+
+/* 🔥 마우스를 올렸을 때 포인트 효과 (호버) */
+.hero-btn:hover {
+  background-color: #1d4ed8;    /* 색상이 더 진해짐 */
+  transform: translateY(-5px) scale(1.05); /* 버튼이 위로 솟아오르며 커짐 */
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.6); /* 그림자가 진해져서 입체감 극대화 */
+  cursor: pointer;
+}
+
+/* 클릭했을 때 살짝 눌리는 느낌 */
+.hero-btn:active {
+  transform: translateY(-2px) scale(1.02);
 }
 
 /* =========================
