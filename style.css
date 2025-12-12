@@ -346,3 +346,20 @@ header .menu {
     max-height: 75%;
     object-fit: contain;
 }
+
+/* 팀 페이지 이전 / 다음 네비게이션 */
+.team-nav {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.team-nav a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #0077cc;
+}
+
+.team-nav a:hover {
+    text-decoration: underline;
+}
