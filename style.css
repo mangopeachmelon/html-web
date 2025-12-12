@@ -205,19 +205,26 @@ header .menu {
 
 /* ===== 카드 전체를 감싸는 그리드 ===== */
 .card-container{
-    display: grid;
-    grid-template-columns: repeat(4, minmax(240px, 1fr)); /* 큰 화면 4열 */
-    gap: 28px;
-    align-items: stretch;  /* 카드 높이 균일 */
-    max-width: 1600px;
-    margin: 40px auto 0;
-    padding: 0 10px;
+  display: grid;
+
+  /* ✅ 5열 기준 + 남는 줄 자동 처리 */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  gap: 28px;
+
+  /* ✅ 마지막 줄 가운데 정렬 */
+  justify-content: center;
+
+  align-items: stretch;
+  max-width: 1600px;
+  margin: 40px auto 0;
+  padding: 0 10px;
 }
 
+
 /* 화면 줄면 자동 3열/2열/1열 */
-@media (max-width: 1200px){
-    .card-container{ grid-template-columns: repeat(3, minmax(240px, 1fr)); }
-}
+/* @media (max-width: 1200px){
+    .card-container{ grid-template-columns: repeat(3, minmax(240px, 1fr)); } */
 @media (max-width: 900px){
     .card-container{ grid-template-columns: repeat(2, minmax(220px, 1fr)); }
 }
@@ -401,7 +408,7 @@ a {
     text-decoration: none;
 }
 
-/* 모바일 반응형 */
+/* 모바일 반응형 
 @media (max-width: 900px) {
     .card-container {
         gap: 20px;
@@ -416,7 +423,7 @@ a {
     .card {
         width: 90%;
     }
-}
+}*/
 
 /* 카드 hover 시 로고만 살짝 확대 */
 .card-logo img {
@@ -483,4 +490,48 @@ a {
 
     line-clamp: 2;          /* 👈 이 줄 추가 (표준 대비) */
     overflow: hidden;
+}
+
+/* ===== (최종) 리그 목록 카드 그리드 ===== */
+.card-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 280px));
+  gap: 28px;
+  justify-content: center;   /* ✅ 마지막 줄 가운데 */
+  align-items: stretch;
+  margin: 40px auto 0;
+  padding: 0 10px;
+}
+
+/* =========================================================
+   FIX PATCH (added by ChatGPT): grid centering + uniform cards
+   - 마지막 줄이 왼쪽에 남지 않게 가운데 정렬
+   - 카드 폭/높이 균일
+   ========================================================= */
+
+/* 카드 그리드: 남는 카드(마지막 줄)도 가운데로 */
+.card-container{
+  display: grid;
+  gap: 28px;
+  grid-template-columns: repeat(auto-fit, 280px);
+  justify-content: center;
+  align-items: stretch;
+  margin: 40px auto 0;
+  padding: 0 10px;
+}
+
+/* 카드 크기 균일(겹쳐 보이는 느낌 완화) */
+.card{
+  width: 280px;
+  height: 360px;
+  box-sizing: border-box;
+}
+
+/* 반응형 */
+@media (max-width: 900px){
+  .card-container{ grid-template-columns: repeat(2, 280px); }
+}
+@media (max-width: 600px){
+  .card-container{ grid-template-columns: 1fr; }
+  .card{ width: 100%; }
 }
